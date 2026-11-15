@@ -94,4 +94,6 @@ CodeQL setup succeeded and its [contextual review](../evidence/codeql-triage-202
 records 123 open high-severity CLI path findings, including 39 historical-source
 findings. They remain visible; scanning success is not a clean-security claim.
 Optional generic secret patterns are unavailable for this user-owned repository
-under the documented eligibility. No paid service was enabled.
+under the documented eligibility. No paid service was enabled. Two alerts on the old build-only setuptools pin
+are addressed by `84.2.1` in the correction PR; default-branch closure remains
+pending merge and is recorded in the [dependency review](../evidence/dependency-review-20261115.json).

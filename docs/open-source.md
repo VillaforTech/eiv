@@ -64,7 +64,11 @@ GitHub Actions app. `release` publishes only on default-branch pushes and is not
 a required PR validation check. This policy permits one maintainer to submit and
 merge a passing PR without another reviewer. It does not bypass checks for admins.
 
-The existing Dependabot PRs are preserved. The source publication helper now
+The existing Dependabot PRs are preserved. The presentation correction also adopts
+the reviewed build-only setuptools update from PR #6 (`80.9.0` to `84.2.1`) and
+updates its lock-file comment. The [dependency review](../evidence/dependency-review-20261115.json)
+records two alerts on the old default-branch pin; their closure is pending merge
+and dependency-graph refresh, not asserted from topic-branch tests. The source publication helper now
 preserves Wiki, Projects and other merge methods when retrying configuration;
 disabling an unused feature requires a separate occupancy check. It also reads
 settings back separately after writes. These administrative changes do not alter

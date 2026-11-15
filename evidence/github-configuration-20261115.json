@@ -147,7 +147,10 @@
     "setup_conclusion": "success",
     "codeql_open_alerts_at_initial_scan": 123,
     "codeql_contextual_review": "evidence/codeql-triage-20261115.md",
-    "paid_services_enabled": false
+    "paid_services_enabled": false,
+    "dependency_review": "evidence/dependency-review-20261115.json",
+    "dependency_alerts_on_default_branch_at_review": 2,
+    "dependency_correction": "setuptools==84.2.1 in PR7; alerts remain open on master until merged"
   },
   "limitations": [
     "Generic/non-provider secret patterns remained disabled after request; documented eligibility requires qualifying organization repository, whereas EIV is user-owned.",
