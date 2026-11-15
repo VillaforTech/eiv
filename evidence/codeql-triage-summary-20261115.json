@@ -1,0 +1,44 @@
+{
+  "schema": "eiv-codeql-context-triage-1",
+  "recorded_at_utc": "2026-11-15T19:18:47.203955+00:00",
+  "repository": "VillaforTech/eiv",
+  "scan_commit": "7516fd5c6ba9f6b9c0e01cddd91ac35a4cf909dd",
+  "setup_run_url": "https://github.com/VillaforTech/eiv/actions/runs/43751384263",
+  "analysis_id": 2171973986,
+  "query_suite": "default",
+  "threat_model": "remote_and_local",
+  "setup_conclusion": "success",
+  "open_alerts": 123,
+  "rule_counts": {
+    "py/path-injection": 123
+  },
+  "groups": {
+    "current_tooling": 84,
+    "historical_source": 39
+  },
+  "unique_argparse_flow_source_locations": 17,
+  "sarif_thread_flows_inspected": 242,
+  "remote_path_traversal_identified_in_reported_flows": false,
+  "security_guarantee": false,
+  "alerts_dismissed": 0,
+  "path_counts": {
+    "eiv_experiment/selection_audit.py": 9,
+    "evidence/frozen-v0.3/eiv_experiment/selection_audit.py": 9,
+    "scripts/replay_frozen.py": 7,
+    "evidence/frozen-v0.3/eiv_experiment/replay.py": 2,
+    "scripts/release_github.py": 5,
+    "eiv_experiment/replay.py": 2,
+    "eiv_experiment/planner.py": 6,
+    "scripts/package_release.py": 19,
+    "scripts/export_public.py": 18,
+    "eiv_experiment/dimensions.py": 14,
+    "results/selection-audit-final-20261023/audit-source.py": 9,
+    "evidence/frozen-v0.3/eiv_experiment/dimensions.py": 14,
+    "results/llm-pilot-v2-source/driver.py": 1,
+    "eiv_llm/analyze.py": 3,
+    "evidence/frozen-v0.3/eiv_llm/analyze.py": 3,
+    "evidence/frozen-v0.3/eiv_llm/__main__.py": 1,
+    "eiv_llm/__main__.py": 1
+  },
+  "report": "codeql-triage-20261115.md"
+}

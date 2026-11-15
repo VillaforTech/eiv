@@ -1,0 +1,51 @@
+{
+  "schema": "eiv-dependabot-triage-1",
+  "recorded_at_utc": "2026-11-15T19:25:30.332614+00:00",
+  "repository": "VillaforTech/eiv",
+  "open_alert_count": 2,
+  "alerts": [
+    {
+      "number": 2,
+      "state": "open",
+      "package": "setuptools",
+      "manifest": "pyproject.toml",
+      "scope": "development",
+      "version_requirement": "= 80.9.0",
+      "severity": "low",
+      "ghsa_id": "GHSA-xmj3-9gf7-h52w",
+      "cve_id": null,
+      "first_patched_version": "84.1.0",
+      "url": "https://github.com/VillaforTech/eiv/security/dependabot/2"
+    },
+    {
+      "number": 1,
+      "state": "open",
+      "package": "setuptools",
+      "manifest": "pyproject.toml",
+      "scope": "development",
+      "version_requirement": "= 80.9.0",
+      "severity": "medium",
+      "ghsa_id": "GHSA-h35f-9h28-mq5c",
+      "cve_id": "CVE-2026-59890",
+      "first_patched_version": "83.0.0",
+      "url": "https://github.com/VillaforTech/eiv/security/dependabot/1"
+    }
+  ],
+  "reviewed_pr": {
+    "number": 6,
+    "url": "https://github.com/VillaforTech/eiv/pull/6",
+    "head_sha": "103b83b31a44410c2e2075fd3417cb16cc565459",
+    "diff": "One build-system pin: setuptools==80.9.0 -> setuptools==84.2.1",
+    "ci_run": "https://github.com/VillaforTech/eiv/actions/runs/43660518969",
+    "ci_conclusion": "success",
+    "freshness_limit": "PR6 is behind current master; refresh and recheck against final base before merging"
+  },
+  "correction": {
+    "pull_request": "https://github.com/VillaforTech/eiv/pull/7",
+    "build_pin": "setuptools==84.2.1",
+    "based_on_reviewed_change": "https://github.com/VillaforTech/eiv/pull/6",
+    "requirements_comment_updated": true,
+    "default_branch_alerts": "Still open until the correction is merged; do not infer closure from a topic branch",
+    "historical_release": "v0.4.0 tag and assets preserved"
+  }
+}

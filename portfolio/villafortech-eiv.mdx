@@ -1,11 +1,11 @@
 ---
 title: 'EIV: permisos verificables para agentes de IA'
 shortTitle: 'EIV · Modelo formal de permisos'
-eyebrow: 'Caso de ingeniería · Seguridad de IA'
+eyebrow: 'Investigación e ingeniería personal'
 slug: 'es-eiv'
 translationKey: 'eiv'
 locale: 'es'
-date: '2026-11-14'
+date: '2026-11-15'
 projectPeriod: '2026'
 summary: 'Construí un modelo formal que representa la acción solicitada, compara interpretaciones y planifica aclaraciones. Cada decisión conserva sus entradas, comprobaciones y respuestas.'
 tags: ['Seguridad de IA', 'Métodos formales', 'Trazabilidad', 'Python']
@@ -32,7 +32,7 @@ disclosure: 'Laboratorio de investigación con decisiones y acciones simuladas. 
 
 Si una persona pide enviar un informe a «Alex o Bea», el sistema necesita representar qué operación está considerando y qué interpretaciones del permiso son plausibles. Elegir una lectura y comprobarla no demuestra que corresponda a la intención original.
 
-Construí EIV —Especificación Interactiva Verificable— para estudiar ese límite con un vocabulario finito de permisos. El núcleo recibe una acción solicitada, hechos, interpretaciones candidatas y preguntas disponibles. Comprueba sus consecuencias, selecciona una aclaración cuando resulta útil y devuelve una decisión simulada de permitir, denegar, preguntar o abstenerse.
+Construí EIV —Especificación Interactiva Verificable— como proyecto personal de investigación e ingeniería para estudiar ese límite con un vocabulario finito de permisos. El núcleo recibe una acción solicitada, hechos, interpretaciones candidatas y preguntas disponibles. Comprueba sus consecuencias, selecciona una aclaración cuando resulta útil y devuelve una decisión simulada de permitir, denegar, preguntar o abstenerse.
 
 ## Un modelo explícito de la acción
 
@@ -73,7 +73,7 @@ El planificador usa programación dinámica con memoización. Primero maximiza e
 ## Evidencia reproducible, incluidos los resultados negativos
 
 <div class="fairness-evidence-ledger">
-  <div><span>PRUEBAS AUTOMATIZADAS</span><strong>194</strong><small>Suite validada en Python 3.10–3.14, incluida integración HTTP</small></div>
+  <div><span>PRUEBAS AUTOMATIZADAS</span><strong>194</strong><small>v0.4.0: Python 3.10–3.14, incluida integración HTTP</small></div>
   <div><span>REFERENCIA DEL PLANIFICADOR</span><strong>564</strong><small>Problemas finitos pequeños contrastados con un cálculo independiente</small></div>
   <div><span>REGISTROS HISTÓRICOS V3</span><strong>28.800</strong><small>Resultados correlacionados de un estudio construido</small></div>
 </div>
@@ -82,7 +82,7 @@ En la porción V3 con cobertura completa y una pregunta, la selección dirigida 
 
 La intervención de omisión conserva el fallo central. Al quitar todas las lecturas restrictivas, ambas políticas históricas permiten incorrectamente **144/144 casos cuya intención era denegar**. El planificador exacto también conserva ese fallo. El consenso equivocado evita que se pregunte.
 
-V3 contiene 1.440 casos construidos y 28.800 registros entre políticas, órdenes y presupuestos. Seis escenarios comparten una estructura booleana. Las repeticiones están correlacionadas, las etiquetas son programáticas y no tienen revisión semántica humana independiente. Estos recuentos no estiman tasas de error reales.
+V3 contiene 1.440 casos construidos y 28.800 registros entre políticas, órdenes y presupuestos. Seis escenarios comparten una estructura booleana. Las repeticiones están correlacionadas; las etiquetas fueron escritas con IA y materializadas por el generador, sin revisión semántica humana independiente. Estos recuentos no estiman tasas de error reales.
 
 Un contraejemplo conocido mostró además que separar más pares no siempre resuelve más intenciones. Con una pregunta, la heurística resuelve 0/8 posibilidades y el planificador exacto resuelve 1/8. La extensión actual lo registra como una **corrección post hoc** a una limitación conocida, no como una comparación reservada. Su estudio separado conserva 17.280 resultados sobre casos ya inspeccionados.
 
@@ -98,6 +98,33 @@ El proyecto mantiene también la evidencia menos favorable: en V2, reducir pregu
 - Datos versionados, repetición aislada del código histórico, auditorías con cálculos de referencia separados y referencias académicas.
 
 El runtime habitual y la repetición científica utilizan la biblioteca estándar de Python. No requieren una llamada a un modelo, una API de pago ni una descarga de pesos. Los experimentos no ejecutan acciones de archivos o mensajes.
+
+## Reproducir el artefacto
+
+El código se publica con licencia MIT. La [versión v0.4.0](https://github.com/VillaforTech/eiv/releases/tag/v0.4.0) conserva el código y un ZIP con la evidencia histórica restaurada. La [validación del release](https://github.com/VillaforTech/eiv/actions/runs/43660978132) ejecutó 194 pruebas por versión de Python 3.10–3.14, cuatro pruebas de JavaScript, instalación fuera del checkout y repetición de experimentos. Estas son comprobaciones de ingeniería sobre el artefacto; no certifican seguridad real.
+
+Con Python 3.10 o posterior, desde un directorio nuevo:
+
+```sh
+git clone https://github.com/VillaforTech/eiv.git
+cd eiv
+git switch --detach v0.4.0
+python3 scripts/restore_evidence.py
+python3 -m unittest discover -s tests -v
+python3 -m eiv.web
+```
+
+El laboratorio se abre en **http://127.0.0.1:8765**. Permite inspeccionar candidatos, responder aclaraciones y descargar el registro calculado por Python. La vista estática de este caso es una ilustración separada; no conecta con el motor.
+
+Para repetir la evidencia histórica y la comparación del planificador, utiliza directorios de salida nuevos:
+
+```sh
+python3 scripts/reproduce.py --output build/reproduction-review
+python3 -m eiv_experiment.planner --output build/planner-review
+node --test portfolio/test-demo.cjs
+```
+
+La restauración verifica los bytes históricos sin llamadas de red y rechaza archivos en conflicto. La [guía de reproducción](https://github.com/VillaforTech/eiv/blob/v0.4.0/docs/reproducibility.md) explica los manifiestos y las comprobaciones. Para citar la versión, el repositorio incluye [CITATION.cff](https://github.com/VillaforTech/eiv/blob/v0.4.0/CITATION.cff).
 
 ## Lo que sigue abierto
 

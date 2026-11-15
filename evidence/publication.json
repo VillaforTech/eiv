@@ -41,6 +41,33 @@
     "https://github.com/VillaforTech/eiv/issues/4"
   ],
   "administrative_settings": {
+    "verified_at_utc": "2026-11-15T19:19:52.376912+00:00",
+    "description": "Formal models and traceable permission decisions for AI agents: bounded verification, clarification, and reproducible research.",
+    "homepage": "https://www.villafortech.com/",
+    "topics": [
+      "ai-agents",
+      "ai-safety",
+      "authorization",
+      "explainability",
+      "formal-methods",
+      "human-in-the-loop",
+      "python",
+      "reproducible-research"
+    ],
+    "has_issues": true,
+    "has_discussions": true,
+    "has_wiki": false,
+    "has_projects": false,
+    "allow_squash_merge": true,
+    "allow_merge_commit": true,
+    "allow_rebase_merge": true,
+    "delete_branch_on_merge": true,
+    "branch_protection": "Verified on master: seven checks, strict status, resolved conversations, admins included, no force/deletion, PR with zero reviews",
+    "security_controls": "See configuration receipt: enabled alerts/fixes/private reporting/scanning; documented optional account limits and open CodeQL alerts",
+    "receipt": "evidence/github-configuration-20261115.json"
+  },
+  "website": "Draft only; About links to verified personal homepage; no production deployment",
+  "initial_publication_administrative_settings": {
     "description": null,
     "topics": [],
     "issues": true,
@@ -51,6 +78,5 @@
     "branch_protection": "Not configured by this session; administrative API unavailable",
     "security_controls": "Not configured or verified by this session",
     "scope": "Source files and releases are published; desired administrative changes in docs/open-source.md are not asserted as active"
-  },
-  "website": "Draft only; no production deployment"
+  }
 }

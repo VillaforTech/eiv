@@ -1,5 +1,5 @@
 # Runtime: Python standard library only; no third-party Python dependencies.
 # Reference interpreter used for the recorded run: CPython 3.14.5.
-# Build-only tool for editable installation: setuptools==80.9.0 (pyproject.toml).
+# Build-only tool for editable installation: setuptools==84.2.1 (pyproject.toml).
 # Optional local LLM: Ollama 0.40.0 and pinned Gemma 2 9B Q4_0 digest in run manifest.
 # No model download or cloud fallback is part of reproduction.
