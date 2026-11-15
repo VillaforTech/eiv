@@ -1,6 +1,6 @@
 # Project completion record
 
-Version 0.4.0 · 14 November 2026 · Roberto Villafuerte
+Version 0.4.0 · 15 November 2026 · Roberto Villafuerte
 
 ## Completed engineering scope
 
@@ -18,24 +18,24 @@ Version 0.4.0 · 14 November 2026 · Roberto Villafuerte
 
 ## Validation completed
 
-GitHub Actions run `43654509468` passed all seven jobs for source commit
-`b81067777b20adf26e2403bac87d14f9fffdda00`, tested through pull-request merge
-commit `b4e3d5b5a359814a9cfee6989fd447dd28929733`: the full **176-test** suite
-on Python 3.10, 3.11, 3.12, 3.13 and 3.14, package installation outside the
-checkout, historical/planner replay, and four JavaScript portfolio tests.
-The Python total includes 164 core/release checks and 12 publication-helper
-checks. All five Python job logs explicitly report 176 tests and `OK`, including
-live HTTP integration. The [validation receipt](../evidence/current-validation.json)
-records the run, tested commits, job IDs and log verification. The changes were
-merged as `0481a478227fb72e9ea2d63175fd97c6d3c672a5`.
+The public [GitHub Actions run 43660601749](https://github.com/VillaforTech/eiv/actions/runs/43660601749)
+passed all eight jobs for exact source commit
+`fb1e634133d9c0a1a9097c0b09ed74d25e3d6436`. All five Python job logs report
+**194 tests and OK** on Python 3.10, 3.11, 3.12, 3.13 and 3.14, including live
+HTTP integration and package installation outside the checkout. The suite includes
+164 core/release checks, 14 publication-helper checks, 11 release guards and five
+local evidence-restoration checks. Four JavaScript portfolio tests also pass.
 
-The local managed host could not bind loopback sockets. The latest local retry
-completed 169 tests, but the HTTP test class could not start because socket
-binding was denied. The local full-suite command therefore failed at setup;
-successful CI includes those seven HTTP tests and closed that execution gap. Browser visual inspection remains unperformed:
-the local browser runtime was unavailable and headless Chrome was blocked.
-Responsive styles, semantic markup, keyboard controls, labels and relative
-links were checked statically; those checks do not replace a rendered review.
+The [validation receipt](../evidence/current-validation.json) records the public
+run, exact commit, job IDs and verified log summaries. Local restoration checks
+recover the three compressed evidence files byte for byte before tests and replay.
+The release job in that validation run did not publish a release because no
+version request was present; actual release publication is separately verified.
+
+The local managed host cannot bind loopback sockets; the full HTTP suite passed
+in GitHub CI. Browser visual inspection remains unperformed. Responsive styles,
+semantic markup, keyboard controls, labels, MDX compilation and local links were
+checked separately; those checks do not replace a rendered review.
 
 Historical replay verifies 25 source files and 43 evidence files, including
 all 240 v2 outcomes and all 28,800 v3 outcomes. V3 outputs and the independent
@@ -64,8 +64,10 @@ complete bounded research-engineering project with an explicit research agenda.
 
 ## Public presentation
 
-The portfolio remains a draft, intended for integration into the author's
-website. Review destination URLs and hosting configuration before publication.
-A public source export contains only the allowlisted personal-project files,
-without repository history or private administrative material. Its creation
-does not itself publish a repository or website.
+The source project is public at [VillaforTech/eiv](https://github.com/VillaforTech/eiv),
+with independent source history, MIT licensing, documentation and a contribution
+roadmap. Its publication does not deploy the portfolio website. The website case
+study remains a reviewed draft for integration into the author's site.
+
+[Repository configuration](open-source.md) distinguishes verified public/source
+settings from administrative controls that still need to be applied and read back.

@@ -55,7 +55,7 @@ the author's existing brand assets, included only to preview his website
 integration; no general trademark or branding rights are granted.
 
 The preview's action record is explicitly illustrative, not a newly executed
-Python result. The current test count refers to the verified 176-test CI matrix,
+Python result. The current test count refers to the verified 194-test CI matrix,
 not a real-world safety rate. No analytics, forms, models, tools or remote font
 requests run in the preview. The HTML contains local navigation controls only.
 

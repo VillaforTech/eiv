@@ -13,6 +13,14 @@ This release provides the decision and trace layer for **simulated** file and me
 - **Preserved research evidence:** historical experiments replay with archived source, while the current planner comparison remains separately versioned. Earlier failures and negative results remain visible.
 - **Open-source foundations:** MIT license, citation metadata, verified academic bibliography, contributor and security guidance, issue/PR templates, and a versioned CI workflow.
 
+### Engineering validation
+
+The [public validation run](https://github.com/VillaforTech/eiv/actions/runs/43660601749)
+verified 194 tests on each Python version from 3.10 through 3.14, including HTTP
+integration and installation outside the checkout. Four JavaScript tests and
+full historical/current planner replay passed. Release publication is additionally
+gated on the same checks for the release commit.
+
 ### What the evidence establishes
 
 The exact planner addresses a known greedy-selection counterexample: with one question, it resolves 1/8 possible intents where the greedy rule resolves 0/8. This is a **post-hoc engineering correction**, not a held-out performance claim.

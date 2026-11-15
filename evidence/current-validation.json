@@ -1,75 +1,162 @@
 {
-  "schema": "eiv-validation-receipt-1",
+  "schema": "eiv-validation-receipt-2",
   "date": "2026-11-14",
-  "source_commit": "b81067777b20adf26e2403bac87d14f9fffdda00",
-  "github_actions_run_id": 43654509468,
-  "test_count_per_python": 176,
+  "timezone": "America/Guayaquil",
+  "ci_date_utc": "2026-11-15",
+  "repository": "VillaforTech/eiv",
+  "repository_url": "https://github.com/VillaforTech/eiv",
+  "visibility": "public",
+  "source_commit": "fb1e634133d9c0a1a9097c0b09ed74d25e3d6436",
+  "github_actions_run_id": 43660601749,
+  "github_actions_run_url": "https://github.com/VillaforTech/eiv/actions/runs/43660601749",
+  "completed_jobs": 8,
+  "successful_jobs": 8,
+  "test_count_per_python": 194,
+  "test_count_composition": {
+    "core": 164,
+    "publication_helper": 14,
+    "release_guards": 11,
+    "evidence_restoration": 5
+  },
   "jobs": [
     {
       "python": "3.10",
-      "job_id": 132629978209,
+      "runtime_version": "3.10.22",
+      "job_id": 132648829250,
+      "url": "https://github.com/VillaforTech/eiv/actions/runs/43660601749/job/132648829250",
       "conclusion": "success",
-      "test_count": 176,
-      "test_summary_verified": true
+      "test_count": 194,
+      "test_summary_verified": true,
+      "summary_lines": [
+        "2026-11-15T00:55:50.0061759Z Ran 194 tests in 5.199s",
+        "2026-11-15T00:55:50.0061971Z OK"
+      ],
+      "source_commit_verified_from_checkout_log": true,
+      "http_integration_tests": 7,
+      "installed_package_and_assets": "passed outside checkout"
     },
     {
       "python": "3.11",
-      "job_id": 132629978212,
+      "runtime_version": "3.11.18",
+      "job_id": 132648829270,
+      "url": "https://github.com/VillaforTech/eiv/actions/runs/43660601749/job/132648829270",
       "conclusion": "success",
-      "test_count": 176,
-      "test_summary_verified": true
+      "test_count": 194,
+      "test_summary_verified": true,
+      "summary_lines": [
+        "2026-11-15T00:55:48.9793648Z Ran 194 tests in 6.293s",
+        "2026-11-15T00:55:48.9793931Z OK"
+      ],
+      "source_commit_verified_from_checkout_log": true,
+      "http_integration_tests": 7,
+      "installed_package_and_assets": "passed outside checkout"
     },
     {
       "python": "3.12",
-      "job_id": 132629978231,
+      "runtime_version": "3.12.16",
+      "job_id": 132648829305,
+      "url": "https://github.com/VillaforTech/eiv/actions/runs/43660601749/job/132648829305",
       "conclusion": "success",
-      "test_count": 176,
-      "test_summary_verified": true
+      "test_count": 194,
+      "test_summary_verified": true,
+      "summary_lines": [
+        "2026-11-15T00:55:46.9869281Z Ran 194 tests in 6.312s",
+        "2026-11-15T00:55:46.9869511Z OK"
+      ],
+      "source_commit_verified_from_checkout_log": true,
+      "http_integration_tests": 7,
+      "installed_package_and_assets": "passed outside checkout"
     },
     {
       "python": "3.13",
-      "job_id": 132629978169,
+      "runtime_version": "3.13.18",
+      "job_id": 132648829328,
+      "url": "https://github.com/VillaforTech/eiv/actions/runs/43660601749/job/132648829328",
       "conclusion": "success",
-      "test_count": 176,
-      "test_summary_verified": true
+      "test_count": 194,
+      "test_summary_verified": true,
+      "summary_lines": [
+        "2026-11-15T00:55:47.0736468Z Ran 194 tests in 5.329s",
+        "2026-11-15T00:55:47.0737209Z OK"
+      ],
+      "source_commit_verified_from_checkout_log": true,
+      "http_integration_tests": 7,
+      "installed_package_and_assets": "passed outside checkout"
     },
     {
       "python": "3.14",
-      "job_id": 132629978221,
+      "runtime_version": "3.14.10",
+      "job_id": 132648829500,
+      "url": "https://github.com/VillaforTech/eiv/actions/runs/43660601749/job/132648829500",
       "conclusion": "success",
-      "test_count": 176,
-      "test_summary_verified": true
+      "test_count": 194,
+      "test_summary_verified": true,
+      "summary_lines": [
+        "2026-11-15T00:55:49.7584609Z Ran 194 tests in 6.133s",
+        "2026-11-15T00:55:49.7585056Z OK"
+      ],
+      "source_commit_verified_from_checkout_log": true,
+      "http_integration_tests": 7,
+      "installed_package_and_assets": "passed outside checkout"
     }
   ],
   "replay_job": {
-    "id": 132629978002,
+    "id": 132648829042,
     "conclusion": "success",
+    "archived_sources_verified": 25,
+    "evidence_files_verified": 43,
+    "historical_v2_outcomes": 240,
     "historical_v3_outcomes": 28800,
-    "current_planner_outcomes": 17280
+    "v3_exact_replay": true,
+    "selection_audit_exact_replay": true,
+    "saved_model_analysis_replayed_without_inference": true,
+    "current_planner_cases": 1440,
+    "current_planner_outcomes": 17280,
+    "current_planner_counterexample_paths": 96,
+    "complete_test_suite_run": true,
+    "http_integration_tests": "included"
   },
-  "http_integration": "passed in CI",
-  "installed_package": "passed outside checkout in all Python matrix jobs",
-  "portfolio_node_tests": 4,
-  "visual_browser_review": "unavailable; not claimed",
-  "scope": "Engineering validation, not independent human semantic review or real-world safety.",
-  "tested_pull_request_merge_commit": "b4e3d5b5a359814a9cfee6989fd447dd28929733",
-  "merged_commit": "0481a478227fb72e9ea2d63175fd97c6d3c672a5",
-  "test_count_composition": {
-    "core_and_release": 164,
-    "publication_helper": 12
-  },
-  "verification_method": "Read successful job states and full test-summary log lines through the GitHub connector; 176 tests and OK confirmed for every Python job.",
   "portfolio_job": {
-    "id": 132629978166,
+    "id": 132648829272,
     "conclusion": "success",
     "node": "24.22.2",
     "tests": 4,
     "passed": 4,
-    "failed": 0
+    "failed": 0,
+    "skipped": 0,
+    "syntax_checks": "demo.js and app.js passed"
   },
-  "local_restricted_host": {
-    "test_count_completed": 169,
-    "result": "169 tests completed; full-suite command failed at HTTP class setup",
-    "http_integration": "seven tests could not start because the managed shell could not bind localhost; complete HTTP tests passed in CI"
-  }
+  "release_job": {
+    "id": 132649026548,
+    "conclusion": "success",
+    "restoration_step": "skipped",
+    "publication_step": "skipped",
+    "release_published_by_this_run": false,
+    "scope": "The job completed without an explicit release request. Job success does not mean publication."
+  },
+  "local_evidence_restoration": {
+    "verified_files": 3,
+    "ci_jobs": "All five Python jobs and replay restored three exact frozen files before validation.",
+    "local_files_independently_rehashed": true,
+    "files": [
+      {
+        "path": "results/dimensions-v3/raw.jsonl",
+        "size": 23221296,
+        "sha256": "31faad7e4086ba6c2c32d73f2bbb199877ba293c98ab2880cb79383feeb2be4b"
+      },
+      {
+        "path": "benchmark/v3/cases.jsonl",
+        "size": 6395904,
+        "sha256": "129fce5ea45f7bea2525457efab18e38a88ab9fd84118bd1e551fc26cd2b2600"
+      },
+      {
+        "path": "results/engineering-v2/raw.jsonl",
+        "size": 1089023,
+        "sha256": "adad3e8f2f40aeb90b1e8c84264ca974c0c6ab856fc8af8b626b0a8942194af2"
+      }
+    ]
+  },
+  "visual_browser_review": "unavailable; not claimed",
+  "verification_method": "Read all eight completed successful job states and full logs through the GitHub connector. Confirmed the exact checkout SHA, Ran 194 tests plus OK for every Python job, four passing JavaScript tests, all replay counts, three restored files, and skipped publication steps. Independently rehashed the three materialized local evidence files.",
+  "scope": "Engineering validation of this exact public source commit; not independent human semantic review, a production safety guarantee, a website deployment, or release publication."
 }

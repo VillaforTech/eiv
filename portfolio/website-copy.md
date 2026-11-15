@@ -109,7 +109,7 @@ readings are removed in the budget-one slice.
 
 ## Engineering validation
 
-The 176-test Python suite passes on versions 3.10–3.14, including live HTTP
+The 194-test Python suite passes on versions 3.10–3.14, including live HTTP
 integration. Package installation is checked outside the source checkout.
 The exact planner agrees with an independent reference on 564 small policy
 problems. Historical replay audits all 240 V2 and 28,800 V3 outcomes without new
@@ -146,7 +146,7 @@ remain open even when every software test passes.
 
 - Built EIV, a Python research workbench that formalizes proposed agent actions,
   compares candidate permissions, and exports replayable clarification and
-  decision records; validated with 176 automated tests across Python 3.10–3.14.
+  decision records; validated with 194 automated tests across Python 3.10–3.14.
 - Implemented exact bounded clarification planning with memoized decision-tree
   search; checked it against an independent reference on 564 finite problems
   and documented a post-hoc correction to a known greedy-selection failure.
@@ -180,7 +180,7 @@ un agente de IA. EIV representa explícitamente la acción solicitada, compara
 interpretaciones, verifica sus consecuencias y planifica aclaraciones. Cada
 decisión conserva un registro de entradas, comprobaciones, respuestas y cambios
 en las interpretaciones activas. La versión 0.4 incluye planificación exacta
-acotada y 176 pruebas automatizadas en Python 3.10–3.14.
+acotada y 194 pruebas automatizadas en Python 3.10–3.14.
 
 El objetivo es aportar una base verificable para agentes conversacionales.
 Actualmente es un laboratorio local con acciones simuladas: no ejecuta
@@ -188,7 +188,7 @@ herramientas ni garantiza haber capturado la intención real del usuario.
 
 **Logro breve:** Desarrollé un laboratorio de permisos para agentes con modelo
 formal de acciones, planificación exacta de aclaraciones y decisiones
-reproducibles; validado con 176 pruebas y auditorías de evidencia experimental.
+reproducibles; validado con 194 pruebas y auditorías de evidencia experimental.
 
 **Etiquetas:** Seguridad de IA · métodos formales · sistemas interactivos · Python
 
