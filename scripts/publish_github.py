@@ -31,6 +31,11 @@ SETTINGS = {"description": DESCRIPTION, "has_issues": True, "has_discussions": T
             "has_wiki": False, "has_projects": False, "allow_squash_merge": True,
             "allow_merge_commit": False, "allow_rebase_merge": False,
             "delete_branch_on_merge": True}
+MATERIALIZED_EVIDENCE_PATHS = frozenset({
+    "results/dimensions-v3/raw.jsonl",
+    "benchmark/v3/cases.jsonl",
+    "results/engineering-v2/raw.jsonl",
+})
 
 
 class PublishError(RuntimeError):
@@ -119,7 +124,13 @@ def fresh_commit(runner, work, payloads, identity):
     hooks.mkdir()
     runner.run(["git", "init", "--initial-branch=main", "."], cwd=work)
     runner.run(["git", "config", "core.hooksPath", str(hooks)], cwd=work)
-    runner.run(["git", "add", "--", *sorted(payloads)], cwd=work)
+    # The source bundle is materialized and fully verified, but Git distributes
+    # these three files through their checked compressed parts. Preserve their
+    # local bytes without forcing ignored data into the published repository.
+    tracked_paths = sorted(name for name in payloads if name not in MATERIALIZED_EVIDENCE_PATHS)
+    if not tracked_paths:
+        raise PublishError("publication has no distributable source files")
+    runner.run(["git", "add", "--", *tracked_paths], cwd=work)
     login, user_id = identity["login"], identity["id"]
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9-]*", login) or type(user_id) is not int:
         raise PublishError("authenticated GitHub identity is invalid")

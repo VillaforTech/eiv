@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 from scripts.publish_github import (
-    CommandError, PublishError, Runner, SETTINGS, TOPICS, configure, configure_protection, execute,
+    CommandError, PublishError, Runner, SETTINGS, TOPICS, MATERIALIZED_EVIDENCE_PATHS, configure, configure_protection, execute,
     fresh_commit, require_empty, require_public, validate_repository,
 )
 
@@ -97,6 +97,24 @@ class PublicationTests(unittest.TestCase):
             result = subprocess.run(["git", "rev-list", "--count", "HEAD"], cwd=work, capture_output=True, text=True, check=True)
             self.assertEqual(result.stdout.strip(), "1")
             self.assertFalse((work / ".git/refs/remotes").exists())
+
+    def test_fresh_commit_tracks_distribution_but_preserves_ignored_materialized_data(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            work = Path(temporary)
+            payloads = {
+                "README.md": b"Public research source\n",
+                ".gitignore": ("\n".join("/" + path for path in sorted(MATERIALIZED_EVIDENCE_PATHS)) + "\n").encode(),
+                "PUBLIC-MANIFEST.json": b'{"schema":"eiv-public-export-1","files":{}}\n',
+                "evidence/distribution/manifest.json": b'{"schema":"test-fixture"}\n',
+                "evidence/distribution/fixture.gz.part-01": b"compressed-distribution-fixture",
+                **{path: b"materialized evidence fixture\n" for path in MATERIALIZED_EVIDENCE_PATHS},
+            }
+            fresh_commit(Runner(), work, payloads, {"login": "example", "id": 123})
+            tracked = set(subprocess.check_output(["git", "ls-tree", "-r", "--name-only", "HEAD"], cwd=work, text=True).splitlines())
+            self.assertEqual(tracked, set(payloads) - MATERIALIZED_EVIDENCE_PATHS)
+            for path in MATERIALIZED_EVIDENCE_PATHS:
+                self.assertEqual((work / path).read_bytes(), payloads[path])
+            self.assertEqual(subprocess.check_output(["git", "status", "--porcelain"], cwd=work, text=True), "")
 
     def test_protection_is_deferred_until_ci_success(self):
         runner = Mock()
