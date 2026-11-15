@@ -10,7 +10,7 @@ consequences of each, and selects clarifying questions under a finite budget.
 It makes a difficult boundary executable: **a correct verifier can still approve
 the wrong action when the intended interpretation is missing.**
 
-[Research report](docs/research-report.md) · [Project page draft](portfolio/index.html) ·
+[Download v0.4.0](https://github.com/VillaforTech/eiv/releases/tag/v0.4.0) · [Research report](docs/research-report.md) · [Project page draft](portfolio/index.html) ·
 [Personal website preview](portfolio/villafortech-preview.html) ·
 [Formal action model](docs/formal-action-model.md) · [Architecture](docs/architecture.md) · [Usage and API](docs/usage.md) ·
 [Historical evidence](results/dimensions-v3/analysis.md) · [Planner comparison](results/planner-v4/analysis.md) · [Academic references](research/references.bib)

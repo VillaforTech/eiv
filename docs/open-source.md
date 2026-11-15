@@ -11,6 +11,13 @@ verified **public** on 2026-11-15. The initial default branch is `master`; the
 workflow validates pushes and pull requests on any branch. Public source history
 starts independently with the MIT license and the reviewed source export.
 
+The [v0.4.0 release](https://github.com/VillaforTech/eiv/releases/tag/v0.4.0)
+was published on 2026-11-15 from verified commit
+`3b805d9caa157f11e668381c9cfaea2e595f88f5`. Its source ZIP and SHA-256 checksum
+are attached. The [publication receipt](../evidence/publication.json) records
+the tag, successful release workflow, asset digests and observed settings.
+The release request file was removed after publication.
+
 Repository files configure CI, contribution/security policies, Dependabot,
 ownership, citation metadata and the issue/PR templates. Issues are enabled.
 The About description/topics, branch protection and security settings still

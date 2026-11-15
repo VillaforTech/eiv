@@ -50,6 +50,17 @@ paths and 18 nonselecting-reply checks. Exact planning resolves the known
 budget-one counterexample on 1/8 paths versus greedy 0/8; at larger budgets it
 avoids fruitless follow-up questions. It preserves the omitted-meaning failure.
 
+## Published release
+
+[v0.4.0](https://github.com/VillaforTech/eiv/releases/tag/v0.4.0) is published
+from exact commit `3b805d9caa157f11e668381c9cfaea2e595f88f5`, after all eight
+jobs in [release CI](https://github.com/VillaforTech/eiv/actions/runs/43660978132)
+succeeded. The attached ZIP contains 201 files, including restored historical
+evidence; its SHA-256 matches an independently generated local source bundle.
+See the [publication receipt](../evidence/publication.json) for the full digest
+and verified settings. Repository visibility and source/release publication
+are complete; unconfigured administrative controls are listed explicitly.
+
 ## Open research, not represented as finished
 
 1. Independent human review of intended meanings, plausibility and omitted readings.

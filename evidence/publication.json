@@ -1,0 +1,56 @@
+{
+  "schema": "eiv-publication-receipt-1",
+  "date_utc": "2026-11-15",
+  "repository": "VillaforTech/eiv",
+  "repository_id": 1458308655,
+  "repository_url": "https://github.com/VillaforTech/eiv",
+  "visibility": "public",
+  "default_branch": "master",
+  "license": "MIT",
+  "source_history": "Independent public root; previous working repository history was not imported",
+  "release": {
+    "id": 445719926,
+    "tag": "v0.4.0",
+    "url": "https://github.com/VillaforTech/eiv/releases/tag/v0.4.0",
+    "draft": false,
+    "commit": "3b805d9caa157f11e668381c9cfaea2e595f88f5",
+    "published_at": "2026-11-15T01:01:31Z",
+    "ci_run_id": 43660978132,
+    "ci_run_url": "https://github.com/VillaforTech/eiv/actions/runs/43660978132",
+    "ci_conclusion": "success",
+    "assets": [
+      {
+        "name": "eiv-0.4.0-source.sha256",
+        "size": 87,
+        "digest": "sha256:f064cb72851b3607a6da4ebeaea1e39ad78736ea0d6129baad613bde3683844e",
+        "url": "https://github.com/VillaforTech/eiv/releases/download/v0.4.0/eiv-0.4.0-source.sha256"
+      },
+      {
+        "name": "eiv-0.4.0-source.zip",
+        "size": 1365548,
+        "digest": "sha256:f28d528b16f4bf66b1219fc79d9cce03718d1c42520bec234d8b82b408a328d7",
+        "url": "https://github.com/VillaforTech/eiv/releases/download/v0.4.0/eiv-0.4.0-source.zip"
+      }
+    ],
+    "source_zip_digest_matches_independent_local_bundle": true
+  },
+  "roadmap_issues": [
+    "https://github.com/VillaforTech/eiv/issues/1",
+    "https://github.com/VillaforTech/eiv/issues/2",
+    "https://github.com/VillaforTech/eiv/issues/3",
+    "https://github.com/VillaforTech/eiv/issues/4"
+  ],
+  "administrative_settings": {
+    "description": null,
+    "topics": [],
+    "issues": true,
+    "wiki": true,
+    "projects": true,
+    "discussions": false,
+    "delete_branch_on_merge": false,
+    "branch_protection": "Not configured by this session; administrative API unavailable",
+    "security_controls": "Not configured or verified by this session",
+    "scope": "Source files and releases are published; desired administrative changes in docs/open-source.md are not asserted as active"
+  },
+  "website": "Draft only; no production deployment"
+}
