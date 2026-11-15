@@ -1,0 +1,120 @@
+{
+  "candidates": [
+    {
+      "id": "tax_yes",
+      "interpretation": "Tax applied.",
+      "spec": {
+        "assumptions": [
+          {
+            "formula": {
+              "atom": {
+                "args": [
+                  "Ana"
+                ],
+                "pred": "Tax"
+              }
+            },
+            "id": "TaxApplies"
+          }
+        ],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "Paid": 1,
+          "Tax": 1
+        }
+      }
+    },
+    {
+      "id": "tax_no",
+      "interpretation": "Tax did not apply.",
+      "spec": {
+        "assumptions": [
+          {
+            "formula": {
+              "not": {
+                "atom": {
+                  "args": [
+                    "Ana"
+                  ],
+                  "pred": "Tax"
+                }
+              }
+            },
+            "id": "TaxDoesNotApply"
+          }
+        ],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "Paid": 1,
+          "Tax": 1
+        }
+      }
+    }
+  ],
+  "questions": [
+    {
+      "answers": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "retain": [
+            "tax_yes"
+          ]
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "retain": [
+            "tax_no"
+          ]
+        }
+      ],
+      "id": "tax",
+      "prompt": "Was the tax applied?"
+    }
+  ],
+  "source_type": "manually_formalized_fixture",
+  "title": "Irrelevant ambiguity"
+}

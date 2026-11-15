@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "id": "literal",
+      "interpretation": "The fact is asserted.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "P",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "P"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "P": 1
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Direct positive fact"
+}

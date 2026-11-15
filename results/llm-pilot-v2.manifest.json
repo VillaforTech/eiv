@@ -1,0 +1,46 @@
+{
+  "kind": "local_llm_feasibility_not_confirmatory",
+  "model": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama": {
+    "version": "0.40.0"
+  },
+  "python": "3.14.5",
+  "seed": 20261012,
+  "options": {
+    "temperature": 0,
+    "seed": 20261012,
+    "num_predict": 600,
+    "num_ctx": 8192
+  },
+  "cases_sha256": "0282db28a95cb6579150b8656b20e3fe16900ee4632b94d2991a9374b9909eed",
+  "driver_sha256": "fe02943569403a17ec2b971adb41673c83d880953616a4ccbd0bb648e169119a",
+  "prompts_sha256": "1eae6d143064dabe4f33d6eb853816b5d8ed2536bfe56e7ac97e165d5d10a4e5",
+  "core_sha256": "2f4dca3984345c2309a7bbd7b7f1e5eb27852db54cc0c904da581e9b16599e10",
+  "logic_sha256": "0dc566ca5becea3fbb3ff193c17d2ab076596ac094bbca6a2bb834946f2986f5",
+  "addendum_sha256": "36feedb305e34a7907e37aae8dc6e87e8c52d2f1f26b0ddec2eaa1c023c6bfc8",
+  "schema_sha256": "b746c543aa495079fd189335819ff6b1cafa2717a18ff9e4956bc3186e50ebdf",
+  "split": "test",
+  "selected_case_ids": [
+    "conditional_duration_choice-01",
+    "conditional_duration_choice-02",
+    "conditional_resource_choice-01",
+    "conditional_resource_choice-02",
+    "duration_disjunction-01",
+    "duration_disjunction-03",
+    "insufficient_answer-01",
+    "insufficient_answer-03",
+    "recipient_exception-01",
+    "recipient_exception-02"
+  ],
+  "oracle": "full_intent_disclosure; cannot evaluate targeted question quality",
+  "human_labels_reviewed": false,
+  "started_unix": 1791864502.450826,
+  "arms": [
+    "direct",
+    "conventional",
+    "eiv"
+  ],
+  "finished_unix": 1791864962.196179,
+  "raw_sha256": "9edf640b503a4c6119484a24a0613331372cc4a75cabcf165ec3ddd56e4a9a32"
+}

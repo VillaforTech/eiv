@@ -1,0 +1,30 @@
+{
+  "case_count": 1440,
+  "compression": "gzip level 9, mtime 0, empty filename",
+  "counterexample_records": 96,
+  "human_labels_reviewed": false,
+  "input_and_source_hashes": {
+    "benchmark/v3/cases.jsonl": "129fce5ea45f7bea2525457efab18e38a88ab9fd84118bd1e551fc26cd2b2600",
+    "benchmark/v3/manifest.json": "481379eb1f587a4dc2ababcd7ce70949426308c9c09c4649625039c0c133cc4c",
+    "eiv/logic.py": "3b2e6ff86d3e3b22b286be27413c9c2d81c7b931cb4551c8aea83270e2de7375",
+    "eiv/permissions.py": "8fc9f1ecc7dbc518231a52c9cdb121320d887ad4ba7d776c5061b418cf01b69d",
+    "eiv/planning.py": "7b408107b0899e08ccb495b0ee0aa936fdd1b39a29b23227e8eeff136ed78120",
+    "eiv_experiment/dimensions.py": "c8ceda5ebf0da78cf49215e9ec2bd42c089c20ed5c30673bc61e046f29997a9a",
+    "eiv_experiment/planner.py": "ae34492b1724362cbf254aa740ba7aed50a8ef7e91303cbda70b7da03871775a",
+    "eiv_experiment/selection_audit.py": "764d989d3250b042fd3485dd96cbfc4dc32ca0235f0979763652ac7f3eefe01f"
+  },
+  "kind": "post_hoc_current_core_extension_not_held_out",
+  "model_calls": 0,
+  "output_hashes": {
+    "analysis.md": "74a7e1dc9ca62074aed5b9e4edd68c4591924fba5336e104b83c074a5109a883",
+    "counterexample-case.json": "8d5c4b566baaaf0aee03a5ff294eef0da480c086cab8734980007c006399f00b",
+    "counterexample-raw.jsonl": "b699cbca45da92fba34fecf26c39b5639fca8adbaab8e555197a14316ddea89e",
+    "counterexample-summary.json": "1bc912a7c6cf8b24d014a2792802ec081e334436957609282caf8515fd6287fa",
+    "raw.jsonl.gz": "fe71fcc83fb81ec97b44b9f299bff2b988693ffa6b0c0d9e1cf8867258ba51e5",
+    "summary.json": "5e95eca35a7034b57cbde4b9b6378970553a01d8582ba8670d499b899d4924c6"
+  },
+  "raw_uncompressed_bytes": 16536000,
+  "raw_uncompressed_sha256": "d8aefe6f11d169aa35314e822e019d521738a519d890495aee9066809fcb81b5",
+  "records": 17280,
+  "schema": "eiv-planner-4.0"
+}

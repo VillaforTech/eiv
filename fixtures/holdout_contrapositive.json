@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "id": "literal",
+      "interpretation": "The rule is universal.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Q",
+            "value": false
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "P"
+          }
+        },
+        "rules": [
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "P"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Q"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          }
+        ],
+        "vocabulary": {
+          "P": 1,
+          "Q": 1
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Contrapositive deduction"
+}

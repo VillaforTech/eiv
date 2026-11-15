@@ -1,0 +1,28 @@
+{
+  "audit_source_sha256": "764d989d3250b042fd3485dd96cbfc4dc32ca0235f0979763652ac7f3eefe01f",
+  "created_unix": 1792763899.796494,
+  "human_review": false,
+  "input_hashes": {
+    "benchmark/v2/cases.jsonl": "0282db28a95cb6579150b8656b20e3fe16900ee4632b94d2991a9374b9909eed",
+    "benchmark/v3/cases.jsonl": "129fce5ea45f7bea2525457efab18e38a88ab9fd84118bd1e551fc26cd2b2600",
+    "eiv/logic.py": "0dc566ca5becea3fbb3ff193c17d2ab076596ac094bbca6a2bb834946f2986f5",
+    "eiv/permissions.py": "2f4dca3984345c2309a7bbd7b7f1e5eb27852db54cc0c904da581e9b16599e10",
+    "eiv_experiment/dimensions.py": "c8ceda5ebf0da78cf49215e9ec2bd42c089c20ed5c30673bc61e046f29997a9a",
+    "research/protocol-v3.md": "1db7b4dfd224458e651c74c108bb584af46f222615d7638b010e9613f44e2201",
+    "results/dimensions-v3/raw.jsonl": "31faad7e4086ba6c2c32d73f2bbb199877ba293c98ab2880cb79383feeb2be4b",
+    "results/dimensions-v3/summary.json": "13b923a15d1a9ca9ce65e31c073c465db3fc32d7d7c10178b8856af96beb76cb",
+    "results/engineering-v2/raw.jsonl": "adad3e8f2f40aeb90b1e8c84264ca974c0c6ab856fc8af8b626b0a8942194af2",
+    "results/engineering-v2/summary.json": "6a5689565e62af3b7a5f797eaa8620d0ca42088ffed9ddaa3f4fcbe54f85720f"
+  },
+  "kind": "post_exposure_independent_code_audit_and_constructive_counterexample",
+  "model_calls": 0,
+  "output_hashes": {
+    "analysis.md": "06b144f8e511905d74b2a9877ca325a723bbc1dd45165ca98d0f382929f82ea1",
+    "audit-source.py": "764d989d3250b042fd3485dd96cbfc4dc32ca0235f0979763652ac7f3eefe01f",
+    "audit.json": "43eade7f1c7c3c67f92d39babf8ae8218aea3e414632e4c350224cc2219871c6",
+    "counterexample-case.json": "8d5c4b566baaaf0aee03a5ff294eef0da480c086cab8734980007c006399f00b",
+    "counterexample-raw.jsonl": "1b9d9bc01027992a155e02f9c46e290cd90355fcef45f506695c176126b3e274",
+    "counterexample-summary.json": "77e60a067f6813dfefa5057b8b238839fcec42e8811773f4d514975a5d1631e5"
+  },
+  "python": "3.14.5"
+}

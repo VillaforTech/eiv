@@ -1,0 +1,99 @@
+{
+  "candidates": [
+    {
+      "id": "literal",
+      "interpretation": "Keep both contradictory statements.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member",
+            "value": true
+          },
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member",
+            "value": false
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "Member": 1
+        }
+      }
+    },
+    {
+      "id": "typo",
+      "interpretation": "The negative statement was a typo.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "Member": 1
+        }
+      }
+    }
+  ],
+  "questions": [
+    {
+      "answers": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "retain": [
+            "typo"
+          ]
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "retain": [
+            "literal"
+          ]
+        }
+      ],
+      "id": "typo",
+      "prompt": "Was the negative membership statement a typo?"
+    }
+  ],
+  "source_type": "manually_formalized_fixture",
+  "title": "Visible inconsistent candidate"
+}

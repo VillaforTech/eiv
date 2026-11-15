@@ -1,0 +1,31 @@
+{
+  "case_count": 1440,
+  "cases_sha256": "129fce5ea45f7bea2525457efab18e38a88ab9fd84118bd1e551fc26cd2b2600",
+  "conditions": [
+    "complete",
+    "omit_restrictive",
+    "omit_permissive",
+    "unsure",
+    "missing_latent_other"
+  ],
+  "families": [
+    "resource",
+    "action",
+    "recipient",
+    "duration",
+    "condition",
+    "prohibition"
+  ],
+  "human_labels_reviewed": false,
+  "kind": "prospective_local_engineering_freeze_after_design_exposure",
+  "latent_policies_per_family": 8,
+  "prepared_unix": 1792734447.2025301,
+  "question_order_count": 6,
+  "schema": "eiv-dimensions-3.0",
+  "source_hashes": {
+    "eiv/logic.py": "0dc566ca5becea3fbb3ff193c17d2ab076596ac094bbca6a2bb834946f2986f5",
+    "eiv/permissions.py": "2f4dca3984345c2309a7bbd7b7f1e5eb27852db54cc0c904da581e9b16599e10",
+    "eiv_experiment/dimensions.py": "c8ceda5ebf0da78cf49215e9ec2bd42c089c20ed5c30673bc61e046f29997a9a",
+    "research/protocol-v3.md": "1db7b4dfd224458e651c74c108bb584af46f222615d7638b010e9613f44e2201"
+  }
+}

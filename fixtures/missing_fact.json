@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "id": "necessary",
+      "interpretation": "Only a necessary condition is supplied.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Member"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Paid"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          }
+        ],
+        "vocabulary": {
+          "Member": 1,
+          "Paid": 1
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Missing membership fact"
+}

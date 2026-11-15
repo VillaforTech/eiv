@@ -1,0 +1,75 @@
+{
+  "schema": "eiv-validation-receipt-1",
+  "date": "2026-11-14",
+  "source_commit": "b81067777b20adf26e2403bac87d14f9fffdda00",
+  "github_actions_run_id": 43654509468,
+  "test_count_per_python": 176,
+  "jobs": [
+    {
+      "python": "3.10",
+      "job_id": 132629978209,
+      "conclusion": "success",
+      "test_count": 176,
+      "test_summary_verified": true
+    },
+    {
+      "python": "3.11",
+      "job_id": 132629978212,
+      "conclusion": "success",
+      "test_count": 176,
+      "test_summary_verified": true
+    },
+    {
+      "python": "3.12",
+      "job_id": 132629978231,
+      "conclusion": "success",
+      "test_count": 176,
+      "test_summary_verified": true
+    },
+    {
+      "python": "3.13",
+      "job_id": 132629978169,
+      "conclusion": "success",
+      "test_count": 176,
+      "test_summary_verified": true
+    },
+    {
+      "python": "3.14",
+      "job_id": 132629978221,
+      "conclusion": "success",
+      "test_count": 176,
+      "test_summary_verified": true
+    }
+  ],
+  "replay_job": {
+    "id": 132629978002,
+    "conclusion": "success",
+    "historical_v3_outcomes": 28800,
+    "current_planner_outcomes": 17280
+  },
+  "http_integration": "passed in CI",
+  "installed_package": "passed outside checkout in all Python matrix jobs",
+  "portfolio_node_tests": 4,
+  "visual_browser_review": "unavailable; not claimed",
+  "scope": "Engineering validation, not independent human semantic review or real-world safety.",
+  "tested_pull_request_merge_commit": "b4e3d5b5a359814a9cfee6989fd447dd28929733",
+  "merged_commit": "0481a478227fb72e9ea2d63175fd97c6d3c672a5",
+  "test_count_composition": {
+    "core_and_release": 164,
+    "publication_helper": 12
+  },
+  "verification_method": "Read successful job states and full test-summary log lines through the GitHub connector; 176 tests and OK confirmed for every Python job.",
+  "portfolio_job": {
+    "id": 132629978166,
+    "conclusion": "success",
+    "node": "24.22.2",
+    "tests": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "local_restricted_host": {
+    "test_count_completed": 169,
+    "result": "169 tests completed; full-suite command failed at HTTP class setup",
+    "http_integration": "seven tests could not start because the managed shell could not bind localhost; complete HTTP tests passed in CI"
+  }
+}

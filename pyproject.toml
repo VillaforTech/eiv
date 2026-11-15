@@ -1,0 +1,30 @@
+[project]
+name = "eiv-permissions"
+version = "0.4.0"
+description = "Executable research on permission ambiguity, bounded verification, and clarification planning"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Roberto Villafuerte"}]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["formal-methods", "ai-safety", "authorization", "clarification", "research"]
+
+[project.urls]
+Homepage = "https://github.com/VillaforTech/eiv"
+Documentation = "https://github.com/VillaforTech/eiv/blob/master/docs/usage.md"
+Source = "https://github.com/VillaforTech/eiv"
+Issues = "https://github.com/VillaforTech/eiv/issues"
+
+[project.scripts]
+eiv = "eiv.__main__:main"
+eiv-workbench = "eiv.web:main"
+
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["eiv", "eiv_experiment", "eiv_llm"]
+
+[tool.setuptools.package-data]
+eiv = ["assets/*.html", "assets/*.json"]

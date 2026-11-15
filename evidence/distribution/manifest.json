@@ -1,0 +1,55 @@
+{
+  "schema": "eiv-evidence-distribution-1",
+  "files": [
+    {
+      "path": "results/dimensions-v3/raw.jsonl",
+      "size": 23221296,
+      "sha256": "31faad7e4086ba6c2c32d73f2bbb199877ba293c98ab2880cb79383feeb2be4b",
+      "git_blob_sha1": "03069d82d5d683e5de9334f8350b54cc38fc10a5",
+      "gzip_size": 253404,
+      "gzip_sha256": "b5004c659619e49fd9b7ab1391811bafb1feeb8248f804dc6be28947baede77c",
+      "gzip_parts": [
+        {
+          "path": "evidence/distribution/v3-outcomes.jsonl.gz.part-01",
+          "size": 180000,
+          "sha256": "0997f8fde04b199edb830b0b5d9ad2f4a5d02bb55b7b0c11676c6d807a055674"
+        },
+        {
+          "path": "evidence/distribution/v3-outcomes.jsonl.gz.part-02",
+          "size": 73404,
+          "sha256": "42b6b1caaf2f0c84b5fd492644c947c4bf3db9eb169ade0d8ddb03ff40267073"
+        }
+      ]
+    },
+    {
+      "path": "benchmark/v3/cases.jsonl",
+      "size": 6395904,
+      "sha256": "129fce5ea45f7bea2525457efab18e38a88ab9fd84118bd1e551fc26cd2b2600",
+      "git_blob_sha1": "0d1b94917e1b901a672cefbb6c9bcf409f31281f",
+      "gzip_size": 67637,
+      "gzip_sha256": "37c8b48623edbb5f301cdf6b2467fd595fd91bb70c4a7d1e16c198822ef2a418",
+      "gzip_parts": [
+        {
+          "path": "evidence/distribution/v3-cases.jsonl.gz.part-01",
+          "size": 67637,
+          "sha256": "37c8b48623edbb5f301cdf6b2467fd595fd91bb70c4a7d1e16c198822ef2a418"
+        }
+      ]
+    },
+    {
+      "path": "results/engineering-v2/raw.jsonl",
+      "size": 1089023,
+      "sha256": "adad3e8f2f40aeb90b1e8c84264ca974c0c6ab856fc8af8b626b0a8942194af2",
+      "git_blob_sha1": "445748653aebc3dda5f5f3a00b135ae3e86589f0",
+      "gzip_size": 19212,
+      "gzip_sha256": "12154eab7070cd558c86fd6db65d5e25cf96848015a60d6bb6b11a329caf5cbb",
+      "gzip_parts": [
+        {
+          "path": "evidence/distribution/v2-outcomes.jsonl.gz.part-01",
+          "size": 19212,
+          "sha256": "12154eab7070cd558c86fd6db65d5e25cf96848015a60d6bb6b11a329caf5cbb"
+        }
+      ]
+    }
+  ]
+}

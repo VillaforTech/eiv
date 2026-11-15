@@ -1,0 +1,431 @@
+{
+  "candidates": [
+    {
+      "id": "c000",
+      "interpretation": "Who may receive report? bea; Who may receive archive? dana; How long does the unrelated memo permission extend? once",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "bea"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "dana"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "c001",
+      "interpretation": "Who may receive report? bea; Who may receive archive? dana; How long does the unrelated memo permission extend? session",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "bea"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "dana"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "session"
+        }
+      ]
+    },
+    {
+      "id": "c010",
+      "interpretation": "Who may receive report? bea; Who may receive archive? chen; How long does the unrelated memo permission extend? once",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "bea"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "chen"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "c011",
+      "interpretation": "Who may receive report? bea; Who may receive archive? chen; How long does the unrelated memo permission extend? session",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "bea"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "chen"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "session"
+        }
+      ]
+    },
+    {
+      "id": "c100",
+      "interpretation": "Who may receive report? alex; Who may receive archive? dana; How long does the unrelated memo permission extend? once",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "alex"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "dana"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "c101",
+      "interpretation": "Who may receive report? alex; Who may receive archive? dana; How long does the unrelated memo permission extend? session",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "alex"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "dana"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "session"
+        }
+      ]
+    },
+    {
+      "id": "c110",
+      "interpretation": "Who may receive report? alex; Who may receive archive? chen; How long does the unrelated memo permission extend? once",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "alex"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "chen"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "c111",
+      "interpretation": "Who may receive report? alex; Who may receive archive? chen; How long does the unrelated memo permission extend? session",
+      "permissions": [
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "alex"
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "chen"
+          ],
+          "resources": [
+            "archive"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "send",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            "eli"
+          ],
+          "resources": [
+            "memo"
+          ],
+          "scope": "session"
+        }
+      ]
+    }
+  ],
+  "facts": {},
+  "instruction": "Controlled policy alternatives: select the intended value for each explicitly listed dimension. Each candidate is one entire possible policy.",
+  "questions": [
+    {
+      "answers": [
+        {
+          "id": "v0",
+          "label": "dana",
+          "retain": [
+            "c000",
+            "c001",
+            "c100",
+            "c101"
+          ]
+        },
+        {
+          "id": "v1",
+          "label": "chen",
+          "retain": [
+            "c010",
+            "c011",
+            "c110",
+            "c111"
+          ]
+        }
+      ],
+      "id": "d1",
+      "prompt": "Who may receive archive?"
+    },
+    {
+      "answers": [
+        {
+          "id": "v0",
+          "label": "once",
+          "retain": [
+            "c000",
+            "c010",
+            "c100",
+            "c110"
+          ]
+        },
+        {
+          "id": "v1",
+          "label": "session",
+          "retain": [
+            "c001",
+            "c011",
+            "c101",
+            "c111"
+          ]
+        }
+      ],
+      "id": "d2",
+      "prompt": "How long does the unrelated memo permission extend?"
+    },
+    {
+      "answers": [
+        {
+          "id": "v0",
+          "label": "bea",
+          "retain": [
+            "c000",
+            "c001",
+            "c010",
+            "c011"
+          ]
+        },
+        {
+          "id": "v1",
+          "label": "alex",
+          "retain": [
+            "c100",
+            "c101",
+            "c110",
+            "c111"
+          ]
+        }
+      ],
+      "id": "d0",
+      "prompt": "Who may receive report?"
+    }
+  ],
+  "request": {
+    "action": "send",
+    "domain": "messages",
+    "recipient": "alex",
+    "resource": "report",
+    "scope": "once"
+  },
+  "schema_version": "1.0",
+  "semantic_status": "structured"
+}

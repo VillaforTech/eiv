@@ -1,0 +1,97 @@
+{
+  "candidates": [
+    {
+      "id": "asserted_member",
+      "interpretation": "Incorrectly treats payment as a membership assertion.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "Approved": 1,
+          "Member": 1,
+          "Paid": 1
+        }
+      }
+    },
+    {
+      "id": "payment_suffices",
+      "interpretation": "Incorrectly treats payment as sufficient.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Paid"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Member"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          }
+        ],
+        "vocabulary": {
+          "Approved": 1,
+          "Member": 1,
+          "Paid": 1
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Candidate coverage failure"
+}

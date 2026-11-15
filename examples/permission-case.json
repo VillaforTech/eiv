@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "instruction": "You may send report to alex or bea once.",
+  "request": {
+    "domain": "messages",
+    "action": "send",
+    "resource": "report",
+    "recipient": "alex",
+    "scope": "once"
+  },
+  "facts": {},
+  "candidates": [
+    {
+      "id": "c1",
+      "interpretation": "allow send report; recipient alex only; scope once",
+      "permissions": [
+        {
+          "effect": "allow",
+          "action": "send",
+          "resources": [
+            "report"
+          ],
+          "recipients": [
+            "alex"
+          ],
+          "scope": "once",
+          "conditions": {}
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "interpretation": "allow send report; recipient bea only; scope once",
+      "permissions": [
+        {
+          "effect": "allow",
+          "action": "send",
+          "resources": [
+            "report"
+          ],
+          "recipients": [
+            "bea"
+          ],
+          "scope": "once",
+          "conditions": {}
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "interpretation": "allow send report; recipient both alex and bea; scope once",
+      "permissions": [
+        {
+          "effect": "allow",
+          "action": "send",
+          "resources": [
+            "report"
+          ],
+          "recipients": [
+            "alex",
+            "bea"
+          ],
+          "scope": "once",
+          "conditions": {}
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "interpretation",
+      "prompt": "Which permission interpretation matches your intent? You may answer other or unsure.",
+      "answers": [
+        {
+          "id": "c1",
+          "label": "allow send report; recipient alex only; scope once",
+          "retain": [
+            "c1"
+          ]
+        },
+        {
+          "id": "c2",
+          "label": "allow send report; recipient bea only; scope once",
+          "retain": [
+            "c2"
+          ]
+        },
+        {
+          "id": "c3",
+          "label": "allow send report; recipient both alex and bea; scope once",
+          "retain": [
+            "c3"
+          ]
+        }
+      ]
+    }
+  ],
+  "semantic_status": "controlled"
+}

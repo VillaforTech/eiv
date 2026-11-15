@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "id": "literal",
+      "interpretation": "Both rules are universal.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "P",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "R"
+          }
+        },
+        "rules": [
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "P"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Q"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          },
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Q"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "R"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          }
+        ],
+        "vocabulary": {
+          "P": 1,
+          "Q": 1,
+          "R": 1
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Two hop deduction"
+}

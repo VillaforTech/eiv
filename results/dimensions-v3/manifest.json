@@ -1,0 +1,31 @@
+{
+  "arms": [
+    "direct",
+    "ordinary_first",
+    "fixed_order",
+    "eiv_targeted",
+    "abstain_all"
+  ],
+  "budgets": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "case_count": 1440,
+  "cases_sha256": "129fce5ea45f7bea2525457efab18e38a88ab9fd84118bd1e551fc26cd2b2600",
+  "finished_unix": 1792734463.642669,
+  "freeze_manifest_sha256": "481379eb1f587a4dc2ababcd7ce70949426308c9c09c4649625039c0c133cc4c",
+  "python": "3.14.5",
+  "raw_sha256": "31faad7e4086ba6c2c32d73f2bbb199877ba293c98ab2880cb79383feeb2be4b",
+  "records": 28800,
+  "schema": "eiv-dimensions-3.0",
+  "source_hashes": {
+    "eiv/logic.py": "0dc566ca5becea3fbb3ff193c17d2ab076596ac094bbca6a2bb834946f2986f5",
+    "eiv/permissions.py": "2f4dca3984345c2309a7bbd7b7f1e5eb27852db54cc0c904da581e9b16599e10",
+    "eiv_experiment/dimensions.py": "c8ceda5ebf0da78cf49215e9ec2bd42c089c20ed5c30673bc61e046f29997a9a",
+    "research/protocol-v3.md": "1db7b4dfd224458e651c74c108bb584af46f222615d7638b010e9613f44e2201"
+  },
+  "started_unix": 1792734457.890173,
+  "summary_sha256": "13b923a15d1a9ca9ce65e31c073c465db3fc32d7d7c10178b8856af96beb76cb"
+}

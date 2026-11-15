@@ -1,0 +1,20 @@
+{
+  "v2": {
+    "aggregate_and_family_outcomes": "matched",
+    "boundary": "Independent code within the same AI-assisted project; no independent human label review.",
+    "candidate_decisions_independently_checked": 452,
+    "case_arm_pairs_complete": true,
+    "labels_checked": 72,
+    "paired_points_and_descriptive_intervals": "matched",
+    "records_checked": 240
+  },
+  "v3": {
+    "all_aggregate_and_stratified_metrics": "matched",
+    "all_saved_trace_and_answer_fields": "matched independent replay",
+    "boundary": "Known finite dataset audited within the same project; not independent human evidence.",
+    "candidate_decisions_independently_checked": 8928,
+    "complete_case_arm_budget_product": true,
+    "labels_checked": 1440,
+    "records_checked": 28800
+  }
+}

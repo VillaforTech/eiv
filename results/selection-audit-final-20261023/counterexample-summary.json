@@ -1,0 +1,187 @@
+{
+  "candidate_count": 8,
+  "counts_by_budget": {
+    "0": {
+      "first": {
+        "abstention_n": 8,
+        "abstention_rate": 1.0,
+        "correct_resolved_n": 0,
+        "correct_resolved_rate": 0.0,
+        "false_authorization_n": 0,
+        "false_authorization_rate": 0.0,
+        "false_denial_n": 0,
+        "false_denial_rate": 0.0,
+        "latent_allow_n": 4,
+        "latent_deny_n": 4,
+        "n": 8,
+        "questions_mean": 0.0,
+        "questions_total": 0,
+        "resolved_n": 0,
+        "selective_accuracy": null
+      },
+      "targeted": {
+        "abstention_n": 8,
+        "abstention_rate": 1.0,
+        "correct_resolved_n": 0,
+        "correct_resolved_rate": 0.0,
+        "false_authorization_n": 0,
+        "false_authorization_rate": 0.0,
+        "false_denial_n": 0,
+        "false_denial_rate": 0.0,
+        "latent_allow_n": 4,
+        "latent_deny_n": 4,
+        "n": 8,
+        "questions_mean": 0.0,
+        "questions_total": 0,
+        "resolved_n": 0,
+        "selective_accuracy": null
+      }
+    },
+    "1": {
+      "first": {
+        "abstention_n": 7,
+        "abstention_rate": 0.875,
+        "correct_resolved_n": 1,
+        "correct_resolved_rate": 0.125,
+        "false_authorization_n": 0,
+        "false_authorization_rate": 0.0,
+        "false_denial_n": 0,
+        "false_denial_rate": 0.0,
+        "latent_allow_n": 4,
+        "latent_deny_n": 4,
+        "n": 8,
+        "questions_mean": 1.0,
+        "questions_total": 8,
+        "resolved_n": 1,
+        "selective_accuracy": 1.0
+      },
+      "targeted": {
+        "abstention_n": 8,
+        "abstention_rate": 1.0,
+        "correct_resolved_n": 0,
+        "correct_resolved_rate": 0.0,
+        "false_authorization_n": 0,
+        "false_authorization_rate": 0.0,
+        "false_denial_n": 0,
+        "false_denial_rate": 0.0,
+        "latent_allow_n": 4,
+        "latent_deny_n": 4,
+        "n": 8,
+        "questions_mean": 1.0,
+        "questions_total": 8,
+        "resolved_n": 0,
+        "selective_accuracy": null
+      }
+    },
+    "2": {
+      "first": {
+        "abstention_n": 7,
+        "abstention_rate": 0.875,
+        "correct_resolved_n": 1,
+        "correct_resolved_rate": 0.125,
+        "false_authorization_n": 0,
+        "false_authorization_rate": 0.0,
+        "false_denial_n": 0,
+        "false_denial_rate": 0.0,
+        "latent_allow_n": 4,
+        "latent_deny_n": 4,
+        "n": 8,
+        "questions_mean": 1.875,
+        "questions_total": 15,
+        "resolved_n": 1,
+        "selective_accuracy": 1.0
+      },
+      "targeted": {
+        "abstention_n": 7,
+        "abstention_rate": 0.875,
+        "correct_resolved_n": 1,
+        "correct_resolved_rate": 0.125,
+        "false_authorization_n": 0,
+        "false_authorization_rate": 0.0,
+        "false_denial_n": 0,
+        "false_denial_rate": 0.0,
+        "latent_allow_n": 4,
+        "latent_deny_n": 4,
+        "n": 8,
+        "questions_mean": 1.5,
+        "questions_total": 12,
+        "resolved_n": 1,
+        "selective_accuracy": 1.0
+      }
+    }
+  },
+  "interpretation": "At budget one the core's strict maximum pair-separation score resolves 0/8 candidate intentions; first isolates k8 and resolves 1/8. Equal weighting is finite enumeration, not a prior over human intention. Neither policy is claimed generally optimal.",
+  "kind": "post_v3_constructive_counterexample_not_new_population_study",
+  "latent_allow_n": 4,
+  "latent_deny_n": 4,
+  "one_step_resolution_boundary": "Uses only public partitions and finite consequences. Counts candidate possibilities equally; does not infer a prior over people. It coincides with the evaluated first comparator in this example and is not asserted globally optimal.",
+  "one_step_resolution_choice": "isolate",
+  "other_unsure_checks": [
+    {
+      "answer": "other",
+      "arm": "targeted",
+      "budget": 1,
+      "decision": "abstain"
+    },
+    {
+      "answer": "unsure",
+      "arm": "targeted",
+      "budget": 1,
+      "decision": "abstain"
+    },
+    {
+      "answer": "other",
+      "arm": "targeted",
+      "budget": 2,
+      "decision": "abstain"
+    },
+    {
+      "answer": "unsure",
+      "arm": "targeted",
+      "budget": 2,
+      "decision": "abstain"
+    },
+    {
+      "answer": "other",
+      "arm": "first",
+      "budget": 1,
+      "decision": "abstain"
+    },
+    {
+      "answer": "unsure",
+      "arm": "first",
+      "budget": 1,
+      "decision": "abstain"
+    },
+    {
+      "answer": "other",
+      "arm": "first",
+      "budget": 2,
+      "decision": "abstain"
+    },
+    {
+      "answer": "unsure",
+      "arm": "first",
+      "budget": 2,
+      "decision": "abstain"
+    }
+  ],
+  "question_scores": {
+    "balanced": 8,
+    "isolate": 4
+  },
+  "root_question_diagnostics": [
+    {
+      "candidate_denominator": 8,
+      "immediately_resolved_candidates": 1,
+      "question": "isolate",
+      "separated_unlike_pairs": 4
+    },
+    {
+      "candidate_denominator": 8,
+      "immediately_resolved_candidates": 0,
+      "question": "balanced",
+      "separated_unlike_pairs": 8
+    }
+  ]
+}

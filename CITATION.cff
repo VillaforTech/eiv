@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use EIV, cite this software and specify the version and experiment."
+type: software
+title: "EIV: Interactive Verifiable Specification"
+abstract: "Executable research on permission ambiguity, finite verification, and budget-aware clarification."
+authors:
+  - family-names: Villafuerte
+    given-names: Roberto
+version: 0.4.0
+date-released: 2026-11-14
+license: MIT
+keywords:
+  - formal methods
+  - authorization
+  - AI safety
+  - clarification
+repository-code: "https://github.com/VillaforTech/eiv"
+url: "https://github.com/VillaforTech/eiv"

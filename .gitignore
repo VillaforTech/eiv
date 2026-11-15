@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv*/
+.DS_Store
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example
+# Materialized frozen evidence; restore explicitly before tests or source export.
+/results/dimensions-v3/raw.jsonl
+/benchmark/v3/cases.jsonl
+/results/engineering-v2/raw.jsonl

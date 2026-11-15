@@ -1,0 +1,27 @@
+{
+  "counts": {
+    "dev": 24,
+    "test": 40,
+    "validation": 8
+  },
+  "family_counts": {
+    "dev": 4,
+    "test": 5,
+    "validation": 2
+  },
+  "frozen_at_utc": "2026-10-13T03:55:02.199406+00:00",
+  "hashes": {
+    "benchmark/v2/build.py": "8a3c5a3dd55bd40029079a317b5b6634a7ed4a73bc2cbc902737a50698652491",
+    "benchmark/v2/cases.jsonl": "0282db28a95cb6579150b8656b20e3fe16900ee4632b94d2991a9374b9909eed",
+    "eiv_experiment/replay.py": "1eae6d143064dabe4f33d6eb853816b5d8ed2536bfe56e7ac97e165d5d10a4e5",
+    "research/protocol-v2-amendment.md": "90bdce0260fa780177a2c5ba996a7a3596fd45504daa6d880eef805d796fac5d",
+    "research/protocol.md": "1a1e489530437f0003fea766a291ad68c2364073ed5c9612a4d5f2dce2c31d7c"
+  },
+  "human_review_status": "not performed",
+  "seed": 20261012,
+  "status": "unreviewed engineering split correction; v1 engineering exposed; no test LLM exposure before this freeze",
+  "supersedes": "benchmark/manifest.json for active split only; preserves v1",
+  "test_sha256": "8a650a13ae39f029b3438a6637b0eac9fb7b621956af245364b97d04c86678ae",
+  "user_local_date": "2026-10-12",
+  "version": "2"
+}

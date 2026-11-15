@@ -1,0 +1,260 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "instruction",
+    "request",
+    "facts",
+    "candidates",
+    "questions",
+    "semantic_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "instruction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8000
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "action",
+        "resource",
+        "recipient",
+        "scope"
+      ],
+      "properties": {
+        "domain": {
+          "enum": [
+            "files",
+            "messages"
+          ]
+        },
+        "action": {
+          "enum": [
+            "read",
+            "write",
+            "delete",
+            "send"
+          ]
+        },
+        "resource": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+        },
+        "recipient": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scope": {
+          "enum": [
+            "once",
+            "session"
+          ]
+        }
+      }
+    },
+    "facts": {
+      "type": "object",
+      "maxProperties": 32,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+      },
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "interpretation",
+          "permissions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "effect",
+                "action",
+                "resources",
+                "recipients",
+                "scope",
+                "conditions"
+              ],
+              "properties": {
+                "effect": {
+                  "enum": [
+                    "allow",
+                    "deny"
+                  ]
+                },
+                "action": {
+                  "enum": [
+                    "read",
+                    "write",
+                    "delete",
+                    "send"
+                  ]
+                },
+                "resources": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+                  },
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "uniqueItems": true
+                },
+                "recipients": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "uniqueItems": true
+                },
+                "scope": {
+                  "enum": [
+                    "once",
+                    "session"
+                  ]
+                },
+                "conditions": {
+                  "type": "object",
+                  "maxProperties": 32,
+                  "propertyNames": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+                  },
+                  "additionalProperties": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "minItems": 0,
+            "maxItems": 16
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "prompt",
+          "answers"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "label",
+                "retain"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+                  "not": {
+                    "enum": [
+                      "other",
+                      "unsure"
+                    ]
+                  }
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "retain": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+                  },
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "uniqueItems": true
+                }
+              }
+            },
+            "minItems": 2,
+            "maxItems": 16
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "semantic_status": {
+      "enum": [
+        "controlled",
+        "structured",
+        "unknown"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EIV simulated permission case v1.0",
+  "$comment": "Executable Python validation additionally enforces domain/action/recipient consistency, unique candidate/question/answer IDs, nonempty candidates for known status, and complete disjoint question partitions. Structural validity does not establish correct interpretation or covered intent."
+}

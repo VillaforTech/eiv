@@ -1,0 +1,53 @@
+{
+  "candidates": [
+    {
+      "id": "literal",
+      "interpretation": "Inclusive disjunction.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [
+          {
+            "or": [
+              {
+                "atom": {
+                  "args": [],
+                  "pred": "A"
+                }
+              },
+              {
+                "atom": {
+                  "args": [],
+                  "pred": "B"
+                }
+              }
+            ]
+          }
+        ],
+        "domain": [
+          "Unit"
+        ],
+        "facts": [
+          {
+            "args": [],
+            "pred": "A",
+            "value": false
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [],
+            "pred": "B"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "A": 0,
+          "B": 0
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Disjunctive entailment"
+}

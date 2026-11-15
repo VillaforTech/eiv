@@ -1,0 +1,1020 @@
+{
+  "example": "A user selects the Bea-only reading for a proposed message to Alex.",
+  "scope": "Synthetic example; no message is sent.",
+  "initial_session": {
+    "schema_version": "1.0",
+    "case": {
+      "schema_version": "1.0",
+      "instruction": "You may send report to alex or bea once.",
+      "request": {
+        "domain": "messages",
+        "action": "send",
+        "resource": "report",
+        "recipient": "alex",
+        "scope": "once"
+      },
+      "facts": {},
+      "candidates": [
+        {
+          "id": "c1",
+          "interpretation": "allow send report; recipient alex only; scope once",
+          "permissions": [
+            {
+              "effect": "allow",
+              "action": "send",
+              "resources": [
+                "report"
+              ],
+              "recipients": [
+                "alex"
+              ],
+              "scope": "once",
+              "conditions": {}
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "interpretation": "allow send report; recipient bea only; scope once",
+          "permissions": [
+            {
+              "effect": "allow",
+              "action": "send",
+              "resources": [
+                "report"
+              ],
+              "recipients": [
+                "bea"
+              ],
+              "scope": "once",
+              "conditions": {}
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "interpretation": "allow send report; recipient both alex and bea; scope once",
+          "permissions": [
+            {
+              "effect": "allow",
+              "action": "send",
+              "resources": [
+                "report"
+              ],
+              "recipients": [
+                "alex",
+                "bea"
+              ],
+              "scope": "once",
+              "conditions": {}
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "interpretation",
+          "prompt": "Which permission interpretation matches your intent? You may answer other or unsure.",
+          "answers": [
+            {
+              "id": "c1",
+              "label": "allow send report; recipient alex only; scope once",
+              "retain": [
+                "c1"
+              ]
+            },
+            {
+              "id": "c2",
+              "label": "allow send report; recipient bea only; scope once",
+              "retain": [
+                "c2"
+              ]
+            },
+            {
+              "id": "c3",
+              "label": "allow send report; recipient both alex and bea; scope once",
+              "retain": [
+                "c3"
+              ]
+            }
+          ]
+        }
+      ],
+      "semantic_status": "controlled"
+    },
+    "case_digest": "64b5312ba7068d12b7b52e5d5fcf58b09495d93019024bb7b90b1ff1a407fc34",
+    "answers": [],
+    "max_questions": 1,
+    "result": {
+      "schema_version": "1.0",
+      "decision": "ask",
+      "reason": "candidate_decisions_disagree",
+      "suggested_question": {
+        "id": "interpretation",
+        "prompt": "Which permission interpretation matches your intent? You may answer other or unsure.",
+        "answers": [
+          {
+            "id": "c1",
+            "label": "allow send report; recipient alex only; scope once",
+            "retain": [
+              "c1"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "allow send report; recipient bea only; scope once",
+            "retain": [
+              "c2"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "allow send report; recipient both alex and bea; scope once",
+            "retain": [
+              "c3"
+            ]
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "c1",
+          "decision": "allow",
+          "reason": "explicit_applicable_permission",
+          "checks": [
+            {
+              "permission": 0,
+              "effect": "allow",
+              "dimensions": {
+                "action": true,
+                "resource": true,
+                "recipient": true,
+                "scope": true
+              },
+              "conditions": {},
+              "applicable": true
+            }
+          ],
+          "formal_spec": {
+            "domain": [
+              "operation"
+            ],
+            "vocabulary": {
+              "Granted": 0,
+              "Prohibited": 0,
+              "Authorized": 0
+            },
+            "facts": [
+              {
+                "pred": "Granted",
+                "args": [],
+                "value": true
+              },
+              {
+                "pred": "Prohibited",
+                "args": [],
+                "value": false
+              }
+            ],
+            "rules": [],
+            "assumptions": [],
+            "constraints": [
+              {
+                "iff": [
+                  {
+                    "atom": {
+                      "pred": "Authorized",
+                      "args": []
+                    }
+                  },
+                  {
+                    "and": [
+                      {
+                        "atom": {
+                          "pred": "Granted",
+                          "args": []
+                        }
+                      },
+                      {
+                        "not": {
+                          "atom": {
+                            "pred": "Prohibited",
+                            "args": []
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "and": [
+                    {
+                      "atom": {
+                        "pred": "Granted",
+                        "args": []
+                      }
+                    },
+                    {
+                      "atom": {
+                        "pred": "Prohibited",
+                        "args": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "query": {
+              "atom": {
+                "pred": "Authorized",
+                "args": []
+              }
+            }
+          },
+          "formal_result": {
+            "status": "entailed",
+            "ground_atoms": 3,
+            "assumption_ids": [],
+            "assignments_required": 8,
+            "assignments_examined": 8,
+            "theory_models": 1,
+            "sat_theory_and_query": true,
+            "sat_theory_and_not_query": false,
+            "witness_query": {
+              "Authorized": true,
+              "Granted": true,
+              "Prohibited": false
+            },
+            "countermodel": null
+          },
+          "active": true
+        },
+        {
+          "id": "c2",
+          "decision": "deny",
+          "reason": "no_applicable_permission",
+          "checks": [
+            {
+              "permission": 0,
+              "effect": "allow",
+              "dimensions": {
+                "action": true,
+                "resource": true,
+                "recipient": false,
+                "scope": true
+              },
+              "conditions": {},
+              "applicable": false
+            }
+          ],
+          "formal_spec": {
+            "domain": [
+              "operation"
+            ],
+            "vocabulary": {
+              "Granted": 0,
+              "Prohibited": 0,
+              "Authorized": 0
+            },
+            "facts": [
+              {
+                "pred": "Granted",
+                "args": [],
+                "value": false
+              },
+              {
+                "pred": "Prohibited",
+                "args": [],
+                "value": false
+              }
+            ],
+            "rules": [],
+            "assumptions": [],
+            "constraints": [
+              {
+                "iff": [
+                  {
+                    "atom": {
+                      "pred": "Authorized",
+                      "args": []
+                    }
+                  },
+                  {
+                    "and": [
+                      {
+                        "atom": {
+                          "pred": "Granted",
+                          "args": []
+                        }
+                      },
+                      {
+                        "not": {
+                          "atom": {
+                            "pred": "Prohibited",
+                            "args": []
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "and": [
+                    {
+                      "atom": {
+                        "pred": "Granted",
+                        "args": []
+                      }
+                    },
+                    {
+                      "atom": {
+                        "pred": "Prohibited",
+                        "args": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "query": {
+              "atom": {
+                "pred": "Authorized",
+                "args": []
+              }
+            }
+          },
+          "formal_result": {
+            "status": "refuted",
+            "ground_atoms": 3,
+            "assumption_ids": [],
+            "assignments_required": 8,
+            "assignments_examined": 8,
+            "theory_models": 1,
+            "sat_theory_and_query": false,
+            "sat_theory_and_not_query": true,
+            "witness_query": null,
+            "countermodel": {
+              "Authorized": false,
+              "Granted": false,
+              "Prohibited": false
+            }
+          },
+          "active": true
+        },
+        {
+          "id": "c3",
+          "decision": "allow",
+          "reason": "explicit_applicable_permission",
+          "checks": [
+            {
+              "permission": 0,
+              "effect": "allow",
+              "dimensions": {
+                "action": true,
+                "resource": true,
+                "recipient": true,
+                "scope": true
+              },
+              "conditions": {},
+              "applicable": true
+            }
+          ],
+          "formal_spec": {
+            "domain": [
+              "operation"
+            ],
+            "vocabulary": {
+              "Granted": 0,
+              "Prohibited": 0,
+              "Authorized": 0
+            },
+            "facts": [
+              {
+                "pred": "Granted",
+                "args": [],
+                "value": true
+              },
+              {
+                "pred": "Prohibited",
+                "args": [],
+                "value": false
+              }
+            ],
+            "rules": [],
+            "assumptions": [],
+            "constraints": [
+              {
+                "iff": [
+                  {
+                    "atom": {
+                      "pred": "Authorized",
+                      "args": []
+                    }
+                  },
+                  {
+                    "and": [
+                      {
+                        "atom": {
+                          "pred": "Granted",
+                          "args": []
+                        }
+                      },
+                      {
+                        "not": {
+                          "atom": {
+                            "pred": "Prohibited",
+                            "args": []
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "and": [
+                    {
+                      "atom": {
+                        "pred": "Granted",
+                        "args": []
+                      }
+                    },
+                    {
+                      "atom": {
+                        "pred": "Prohibited",
+                        "args": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "query": {
+              "atom": {
+                "pred": "Authorized",
+                "args": []
+              }
+            }
+          },
+          "formal_result": {
+            "status": "entailed",
+            "ground_atoms": 3,
+            "assumption_ids": [],
+            "assignments_required": 8,
+            "assignments_examined": 8,
+            "theory_models": 1,
+            "sat_theory_and_query": true,
+            "sat_theory_and_not_query": false,
+            "witness_query": {
+              "Authorized": true,
+              "Granted": true,
+              "Prohibited": false
+            },
+            "countermodel": null
+          },
+          "active": true
+        }
+      ],
+      "active_candidate_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "coverage": "unverified",
+      "scope": "conditional_on_supplied_candidates_formalization_facts_and_bounds",
+      "questions_used": 0,
+      "questions_asked": 1,
+      "trace": [
+        {
+          "event": "generated",
+          "candidate_ids": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "semantic_status": "controlled",
+          "coverage": "unverified"
+        },
+        {
+          "event": "decision",
+          "decision": "ask",
+          "reason": "candidate_decisions_disagree",
+          "active_candidate_ids": [
+            "c1",
+            "c2",
+            "c3"
+          ]
+        }
+      ],
+      "simulated": true
+    },
+    "question_strategy": "optimal"
+  },
+  "final_session": {
+    "schema_version": "1.0",
+    "case": {
+      "schema_version": "1.0",
+      "instruction": "You may send report to alex or bea once.",
+      "request": {
+        "domain": "messages",
+        "action": "send",
+        "resource": "report",
+        "recipient": "alex",
+        "scope": "once"
+      },
+      "facts": {},
+      "candidates": [
+        {
+          "id": "c1",
+          "interpretation": "allow send report; recipient alex only; scope once",
+          "permissions": [
+            {
+              "effect": "allow",
+              "action": "send",
+              "resources": [
+                "report"
+              ],
+              "recipients": [
+                "alex"
+              ],
+              "scope": "once",
+              "conditions": {}
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "interpretation": "allow send report; recipient bea only; scope once",
+          "permissions": [
+            {
+              "effect": "allow",
+              "action": "send",
+              "resources": [
+                "report"
+              ],
+              "recipients": [
+                "bea"
+              ],
+              "scope": "once",
+              "conditions": {}
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "interpretation": "allow send report; recipient both alex and bea; scope once",
+          "permissions": [
+            {
+              "effect": "allow",
+              "action": "send",
+              "resources": [
+                "report"
+              ],
+              "recipients": [
+                "alex",
+                "bea"
+              ],
+              "scope": "once",
+              "conditions": {}
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "interpretation",
+          "prompt": "Which permission interpretation matches your intent? You may answer other or unsure.",
+          "answers": [
+            {
+              "id": "c1",
+              "label": "allow send report; recipient alex only; scope once",
+              "retain": [
+                "c1"
+              ]
+            },
+            {
+              "id": "c2",
+              "label": "allow send report; recipient bea only; scope once",
+              "retain": [
+                "c2"
+              ]
+            },
+            {
+              "id": "c3",
+              "label": "allow send report; recipient both alex and bea; scope once",
+              "retain": [
+                "c3"
+              ]
+            }
+          ]
+        }
+      ],
+      "semantic_status": "controlled"
+    },
+    "case_digest": "64b5312ba7068d12b7b52e5d5fcf58b09495d93019024bb7b90b1ff1a407fc34",
+    "answers": [
+      {
+        "question": "interpretation",
+        "answer": "c2"
+      }
+    ],
+    "max_questions": 1,
+    "result": {
+      "schema_version": "1.0",
+      "decision": "deny",
+      "reason": "candidate_consensus_conditional_on_coverage",
+      "suggested_question": null,
+      "candidates": [
+        {
+          "id": "c1",
+          "decision": "allow",
+          "reason": "explicit_applicable_permission",
+          "checks": [
+            {
+              "permission": 0,
+              "effect": "allow",
+              "dimensions": {
+                "action": true,
+                "resource": true,
+                "recipient": true,
+                "scope": true
+              },
+              "conditions": {},
+              "applicable": true
+            }
+          ],
+          "formal_spec": {
+            "domain": [
+              "operation"
+            ],
+            "vocabulary": {
+              "Granted": 0,
+              "Prohibited": 0,
+              "Authorized": 0
+            },
+            "facts": [
+              {
+                "pred": "Granted",
+                "args": [],
+                "value": true
+              },
+              {
+                "pred": "Prohibited",
+                "args": [],
+                "value": false
+              }
+            ],
+            "rules": [],
+            "assumptions": [],
+            "constraints": [
+              {
+                "iff": [
+                  {
+                    "atom": {
+                      "pred": "Authorized",
+                      "args": []
+                    }
+                  },
+                  {
+                    "and": [
+                      {
+                        "atom": {
+                          "pred": "Granted",
+                          "args": []
+                        }
+                      },
+                      {
+                        "not": {
+                          "atom": {
+                            "pred": "Prohibited",
+                            "args": []
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "and": [
+                    {
+                      "atom": {
+                        "pred": "Granted",
+                        "args": []
+                      }
+                    },
+                    {
+                      "atom": {
+                        "pred": "Prohibited",
+                        "args": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "query": {
+              "atom": {
+                "pred": "Authorized",
+                "args": []
+              }
+            }
+          },
+          "formal_result": {
+            "status": "entailed",
+            "ground_atoms": 3,
+            "assumption_ids": [],
+            "assignments_required": 8,
+            "assignments_examined": 8,
+            "theory_models": 1,
+            "sat_theory_and_query": true,
+            "sat_theory_and_not_query": false,
+            "witness_query": {
+              "Authorized": true,
+              "Granted": true,
+              "Prohibited": false
+            },
+            "countermodel": null
+          },
+          "active": false
+        },
+        {
+          "id": "c2",
+          "decision": "deny",
+          "reason": "no_applicable_permission",
+          "checks": [
+            {
+              "permission": 0,
+              "effect": "allow",
+              "dimensions": {
+                "action": true,
+                "resource": true,
+                "recipient": false,
+                "scope": true
+              },
+              "conditions": {},
+              "applicable": false
+            }
+          ],
+          "formal_spec": {
+            "domain": [
+              "operation"
+            ],
+            "vocabulary": {
+              "Granted": 0,
+              "Prohibited": 0,
+              "Authorized": 0
+            },
+            "facts": [
+              {
+                "pred": "Granted",
+                "args": [],
+                "value": false
+              },
+              {
+                "pred": "Prohibited",
+                "args": [],
+                "value": false
+              }
+            ],
+            "rules": [],
+            "assumptions": [],
+            "constraints": [
+              {
+                "iff": [
+                  {
+                    "atom": {
+                      "pred": "Authorized",
+                      "args": []
+                    }
+                  },
+                  {
+                    "and": [
+                      {
+                        "atom": {
+                          "pred": "Granted",
+                          "args": []
+                        }
+                      },
+                      {
+                        "not": {
+                          "atom": {
+                            "pred": "Prohibited",
+                            "args": []
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "and": [
+                    {
+                      "atom": {
+                        "pred": "Granted",
+                        "args": []
+                      }
+                    },
+                    {
+                      "atom": {
+                        "pred": "Prohibited",
+                        "args": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "query": {
+              "atom": {
+                "pred": "Authorized",
+                "args": []
+              }
+            }
+          },
+          "formal_result": {
+            "status": "refuted",
+            "ground_atoms": 3,
+            "assumption_ids": [],
+            "assignments_required": 8,
+            "assignments_examined": 8,
+            "theory_models": 1,
+            "sat_theory_and_query": false,
+            "sat_theory_and_not_query": true,
+            "witness_query": null,
+            "countermodel": {
+              "Authorized": false,
+              "Granted": false,
+              "Prohibited": false
+            }
+          },
+          "active": true
+        },
+        {
+          "id": "c3",
+          "decision": "allow",
+          "reason": "explicit_applicable_permission",
+          "checks": [
+            {
+              "permission": 0,
+              "effect": "allow",
+              "dimensions": {
+                "action": true,
+                "resource": true,
+                "recipient": true,
+                "scope": true
+              },
+              "conditions": {},
+              "applicable": true
+            }
+          ],
+          "formal_spec": {
+            "domain": [
+              "operation"
+            ],
+            "vocabulary": {
+              "Granted": 0,
+              "Prohibited": 0,
+              "Authorized": 0
+            },
+            "facts": [
+              {
+                "pred": "Granted",
+                "args": [],
+                "value": true
+              },
+              {
+                "pred": "Prohibited",
+                "args": [],
+                "value": false
+              }
+            ],
+            "rules": [],
+            "assumptions": [],
+            "constraints": [
+              {
+                "iff": [
+                  {
+                    "atom": {
+                      "pred": "Authorized",
+                      "args": []
+                    }
+                  },
+                  {
+                    "and": [
+                      {
+                        "atom": {
+                          "pred": "Granted",
+                          "args": []
+                        }
+                      },
+                      {
+                        "not": {
+                          "atom": {
+                            "pred": "Prohibited",
+                            "args": []
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "and": [
+                    {
+                      "atom": {
+                        "pred": "Granted",
+                        "args": []
+                      }
+                    },
+                    {
+                      "atom": {
+                        "pred": "Prohibited",
+                        "args": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "query": {
+              "atom": {
+                "pred": "Authorized",
+                "args": []
+              }
+            }
+          },
+          "formal_result": {
+            "status": "entailed",
+            "ground_atoms": 3,
+            "assumption_ids": [],
+            "assignments_required": 8,
+            "assignments_examined": 8,
+            "theory_models": 1,
+            "sat_theory_and_query": true,
+            "sat_theory_and_not_query": false,
+            "witness_query": {
+              "Authorized": true,
+              "Granted": true,
+              "Prohibited": false
+            },
+            "countermodel": null
+          },
+          "active": false
+        }
+      ],
+      "active_candidate_ids": [
+        "c2"
+      ],
+      "coverage": "unverified",
+      "scope": "conditional_on_supplied_candidates_formalization_facts_and_bounds",
+      "questions_used": 1,
+      "questions_asked": 1,
+      "trace": [
+        {
+          "event": "generated",
+          "candidate_ids": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "semantic_status": "controlled",
+          "coverage": "unverified"
+        },
+        {
+          "event": "clarification",
+          "question": "interpretation",
+          "answer": "c2",
+          "before": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "after": [
+            "c2"
+          ]
+        },
+        {
+          "event": "decision",
+          "decision": "deny",
+          "reason": "candidate_consensus_conditional_on_coverage",
+          "active_candidate_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "simulated": true
+    },
+    "question_strategy": "optimal"
+  }
+}

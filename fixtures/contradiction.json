@@ -1,0 +1,46 @@
+{
+  "candidates": [
+    {
+      "id": "literal",
+      "interpretation": "Both assertions are included.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Approved",
+            "value": true
+          },
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Approved",
+            "value": false
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Approved"
+          }
+        },
+        "rules": [],
+        "vocabulary": {
+          "Approved": 1
+        }
+      }
+    }
+  ],
+  "questions": [],
+  "source_type": "manually_formalized_fixture",
+  "title": "Contradictory facts"
+}

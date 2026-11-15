@@ -1,0 +1,190 @@
+{
+  "benchmark_id": "eiv-fixture-v1",
+  "by_split": {
+    "development": {
+      "answerable_cases": 5,
+      "answerable_coverage": 0.6,
+      "blocked_outputs": 1,
+      "cases": 7,
+      "correct_answerable_rate": 0.6,
+      "emission_rate": 0.42857142857142855,
+      "emitted_answers": 3,
+      "questions_asked": 2,
+      "underdetermined_outputs": 1,
+      "wrong_emitted_answers": 0
+    },
+    "structural_holdout": {
+      "answerable_cases": 4,
+      "answerable_coverage": 1.0,
+      "blocked_outputs": 0,
+      "cases": 5,
+      "correct_answerable_rate": 0.75,
+      "emission_rate": 0.8,
+      "emitted_answers": 4,
+      "questions_asked": 0,
+      "underdetermined_outputs": 1,
+      "wrong_emitted_answers": 1
+    }
+  },
+  "cases": [
+    {
+      "action": "ask",
+      "candidate_statuses": {
+        "necessary": "underdetermined",
+        "sufficient": "entailed"
+      },
+      "emitted_answer": null,
+      "id": "necessary_vs_sufficient",
+      "oracle_answer": "yes",
+      "oracle_status": "entailed",
+      "split": "development"
+    },
+    {
+      "action": "underdetermined",
+      "candidate_statuses": {
+        "necessary": "underdetermined"
+      },
+      "emitted_answer": null,
+      "id": "missing_fact",
+      "oracle_answer": null,
+      "oracle_status": "underdetermined",
+      "split": "development"
+    },
+    {
+      "action": "blocked_inconsistent",
+      "candidate_statuses": {
+        "literal": "inconsistent"
+      },
+      "emitted_answer": null,
+      "id": "contradiction",
+      "oracle_answer": null,
+      "oracle_status": "inconsistent",
+      "split": "development"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "tax_no": "entailed",
+        "tax_yes": "entailed"
+      },
+      "emitted_answer": "yes",
+      "id": "irrelevant_ambiguity",
+      "oracle_answer": "yes",
+      "oracle_status": "entailed",
+      "split": "development"
+    },
+    {
+      "action": "ask",
+      "candidate_statuses": {
+        "literal": "inconsistent",
+        "typo": "entailed"
+      },
+      "emitted_answer": null,
+      "id": "inconsistent_candidate",
+      "oracle_answer": "yes",
+      "oracle_status": "entailed",
+      "split": "development"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "asserted_member": "entailed",
+        "payment_suffices": "entailed"
+      },
+      "emitted_answer": "yes",
+      "id": "candidate_coverage_failure",
+      "oracle_answer": "no",
+      "oracle_status": "refuted",
+      "split": "structural_holdout"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "literal": "entailed"
+      },
+      "emitted_answer": "yes",
+      "id": "simple_entailed",
+      "oracle_answer": "yes",
+      "oracle_status": "entailed",
+      "split": "development"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "literal": "refuted"
+      },
+      "emitted_answer": "no",
+      "id": "simple_refuted",
+      "oracle_answer": "no",
+      "oracle_status": "refuted",
+      "split": "development"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "literal": "entailed"
+      },
+      "emitted_answer": "yes",
+      "id": "holdout_disjunction_entailed",
+      "oracle_answer": "yes",
+      "oracle_status": "entailed",
+      "split": "structural_holdout"
+    },
+    {
+      "action": "underdetermined",
+      "candidate_statuses": {
+        "literal": "underdetermined"
+      },
+      "emitted_answer": null,
+      "id": "holdout_disjunction_underdetermined",
+      "oracle_answer": null,
+      "oracle_status": "underdetermined",
+      "split": "structural_holdout"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "literal": "entailed"
+      },
+      "emitted_answer": "yes",
+      "id": "holdout_two_hop",
+      "oracle_answer": "yes",
+      "oracle_status": "entailed",
+      "split": "structural_holdout"
+    },
+    {
+      "action": "answer",
+      "candidate_statuses": {
+        "literal": "refuted"
+      },
+      "emitted_answer": "no",
+      "id": "holdout_contrapositive",
+      "oracle_answer": "no",
+      "oracle_status": "refuted",
+      "split": "structural_holdout"
+    }
+  ],
+  "llm_baseline": null,
+  "method": "manual_fixture_formal_core",
+  "metric_definitions": {
+    "answerable_coverage": "Yes/no emissions on oracle entailed/refuted cases divided by those cases, regardless of correctness.",
+    "correct_answerable_rate": "Correct yes/no emissions divided by oracle entailed/refuted cases.",
+    "emission_rate": "Yes/no emissions divided by all cases.",
+    "questions_asked": "Cases requesting one predeclared distinguishing question.",
+    "wrong_emitted_answers": "Yes/no emissions unequal to oracle yes/no, including emission on nonanswerable cases."
+  },
+  "natural_language_parsing_evaluated": false,
+  "overall": {
+    "answerable_cases": 9,
+    "answerable_coverage": 0.7777777777777778,
+    "blocked_outputs": 1,
+    "cases": 12,
+    "correct_answerable_rate": 0.6666666666666666,
+    "emission_rate": 0.5833333333333334,
+    "emitted_answers": 7,
+    "questions_asked": 2,
+    "underdetermined_outputs": 2,
+    "wrong_emitted_answers": 1
+  },
+  "split_note": "The structural_holdout key marks hand-built structural challenge fixtures, including candidate_coverage_failure. It is not a blind empirical holdout study."
+}

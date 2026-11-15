@@ -1,0 +1,25 @@
+{
+  "counts": {
+    "dev": 32,
+    "test": 24,
+    "validation": 16
+  },
+  "family_counts": {
+    "dev": 8,
+    "test": 6,
+    "validation": 4
+  },
+  "frozen_at_utc": "2026-10-13T03:40:52.537340+00:00",
+  "hashes": {
+    "benchmark/cases.jsonl": "6713d67ed9efed80bcf964ff12abbfb99e19c87c1267c6ba328998eb3072e6d5",
+    "benchmark/generate.py": "d8fbd4352fc64a49f00508068f91bce87f7e7d374ada4ba24e25385df32256e8",
+    "eiv_experiment/replay.py": "1eae6d143064dabe4f33d6eb853816b5d8ed2536bfe56e7ac97e165d5d10a4e5",
+    "research/protocol.md": "1a1e489530437f0003fea766a291ad68c2364073ed5c9612a4d5f2dce2c31d7c"
+  },
+  "human_review_status": "not performed",
+  "seed": 20261012,
+  "status": "unreviewed synthetic engineering freeze; not a blinded holdout",
+  "test_sha256": "b064dbd267537de74b48e227ba5b4dabcd1b2b1d994b4d0bea7386b5b1fc7de0",
+  "user_local_date": "2026-10-12",
+  "version": "1"
+}

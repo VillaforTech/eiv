@@ -1,0 +1,138 @@
+{
+  "candidates": [
+    {
+      "id": "necessary",
+      "interpretation": "Membership implies payment; payment alone may not grant membership.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Member"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Paid"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          }
+        ],
+        "vocabulary": {
+          "Member": 1,
+          "Paid": 1
+        }
+      }
+    },
+    {
+      "id": "sufficient",
+      "interpretation": "Payment implies membership.",
+      "spec": {
+        "assumptions": [],
+        "constraints": [],
+        "domain": [
+          "Ana"
+        ],
+        "facts": [
+          {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Paid",
+            "value": true
+          }
+        ],
+        "query": {
+          "atom": {
+            "args": [
+              "Ana"
+            ],
+            "pred": "Member"
+          }
+        },
+        "rules": [
+          {
+            "if": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Paid"
+              }
+            },
+            "then": {
+              "atom": {
+                "args": [
+                  "?x"
+                ],
+                "pred": "Member"
+              }
+            },
+            "vars": [
+              "?x"
+            ]
+          }
+        ],
+        "vocabulary": {
+          "Member": 1,
+          "Paid": 1
+        }
+      }
+    }
+  ],
+  "questions": [
+    {
+      "answers": [
+        {
+          "id": "yes",
+          "label": "Yes, payment is sufficient",
+          "retain": [
+            "sufficient"
+          ]
+        },
+        {
+          "id": "no",
+          "label": "No, payment is only necessary",
+          "retain": [
+            "necessary"
+          ]
+        }
+      ],
+      "id": "payment_rule",
+      "prompt": "Does paying by itself guarantee membership?"
+    }
+  ],
+  "source_type": "manually_formalized_fixture",
+  "title": "Necessary versus sufficient membership"
+}

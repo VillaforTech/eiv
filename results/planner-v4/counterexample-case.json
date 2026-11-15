@@ -1,0 +1,309 @@
+{
+  "candidates": [
+    {
+      "id": "k1",
+      "interpretation": "Constructed policy 1",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record1"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k2",
+      "interpretation": "Constructed policy 2",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record2"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k3",
+      "interpretation": "Constructed policy 3",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record3"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k4",
+      "interpretation": "Constructed policy 4",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "report"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record4"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k5",
+      "interpretation": "Constructed policy 5",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "unrelated"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record5"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k6",
+      "interpretation": "Constructed policy 6",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "unrelated"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record6"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k7",
+      "interpretation": "Constructed policy 7",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "unrelated"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record7"
+          ],
+          "scope": "once"
+        }
+      ]
+    },
+    {
+      "id": "k8",
+      "interpretation": "Constructed policy 8",
+      "permissions": [
+        {
+          "action": "read",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "unrelated"
+          ],
+          "scope": "once"
+        },
+        {
+          "action": "write",
+          "conditions": {},
+          "effect": "allow",
+          "recipients": [
+            null
+          ],
+          "resources": [
+            "record8"
+          ],
+          "scope": "once"
+        }
+      ]
+    }
+  ],
+  "facts": {},
+  "instruction": "Authored finite policy alternatives. Each clarification reveals only membership in its displayed partition.",
+  "questions": [
+    {
+      "answers": [
+        {
+          "id": "rest",
+          "label": "One of the other seven",
+          "retain": [
+            "k1",
+            "k2",
+            "k3",
+            "k4",
+            "k5",
+            "k6",
+            "k7"
+          ]
+        },
+        {
+          "id": "last",
+          "label": "k8",
+          "retain": [
+            "k8"
+          ]
+        }
+      ],
+      "id": "isolate",
+      "prompt": "Is the intended policy k8 or one of the other seven listed policies?"
+    },
+    {
+      "answers": [
+        {
+          "id": "left",
+          "label": "k1, k2, k5 or k6",
+          "retain": [
+            "k1",
+            "k2",
+            "k5",
+            "k6"
+          ]
+        },
+        {
+          "id": "right",
+          "label": "k3, k4, k7 or k8",
+          "retain": [
+            "k3",
+            "k4",
+            "k7",
+            "k8"
+          ]
+        }
+      ],
+      "id": "balanced",
+      "prompt": "Which of these two listed policy groups contains the intended policy?"
+    }
+  ],
+  "request": {
+    "action": "read",
+    "domain": "files",
+    "recipient": null,
+    "resource": "report",
+    "scope": "once"
+  },
+  "schema_version": "1.0",
+  "semantic_status": "structured"
+}
