@@ -22,6 +22,9 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(result["status"], "planned")
         self.assertEqual((result["network_calls"], result["files_written"]), (0, 0))
         self.assertEqual(runner.mock_calls, [])
+        configuration = execute("VillaforTech/eiv", Path("missing-export"), configure_only=True, runner=runner)
+        self.assertIn("No source, tag or release changes", configuration["publication"])
+        self.assertEqual(runner.mock_calls, [])
 
     def test_repository_validation_rejects_urls_options_and_shell_text(self):
         for value in ("https://github.com/owner/repo", "--public/repo", "owner/repo;touch bad", "owner/../../private"):
@@ -128,11 +131,18 @@ class PublicationTests(unittest.TestCase):
         for branch, encoded in (("master", "master"), ("release/v0.4", "release%2Fv0.4")):
             with self.subTest(branch=branch):
                 calls = []
+                protection = None
                 sha = "a" * 40
                 base = "repos/VillaforTech/eiv"
                 def api(endpoint, method="GET", body=None):
+                    nonlocal protection
                     calls.append((endpoint, method))
                     if endpoint == base:
+                        if method == "PATCH":
+                            self.assertNotIn("has_wiki", body)
+                            self.assertNotIn("has_projects", body)
+                            self.assertNotIn("allow_merge_commit", body)
+                            self.assertNotIn("allow_rebase_merge", body)
                         return dict(PUBLIC, default_branch=branch, **SETTINGS)
                     if endpoint == base + "/topics":
                         return {"names": TOPICS}
@@ -150,7 +160,10 @@ class PublicationTests(unittest.TestCase):
                             "app": {"slug": "github-actions"}}]}
                     if endpoint == base + "/branches/" + encoded + "/protection":
                         if method == "GET":
-                            raise CommandError("gh", 1, 404)
+                            if protection is None:
+                                raise CommandError("gh", 1, 404)
+                            return protection
+                        protection = body
                         return body
                     self.fail("unexpected endpoint: " + endpoint)
                 runner = Mock()
@@ -165,19 +178,31 @@ class PublicationTests(unittest.TestCase):
     def test_protection_uses_observed_checks_zero_reviewers_and_no_force(self):
         sha = "a" * 40
         run = {"id": 1, "head_sha": sha, "path": ".github/workflows/ci.yml", "status": "completed", "conclusion": "success", "check_suite_id": 10}
-        checks = {"total_count": 1, "check_runs": [{"name": "observed-test", "status": "completed", "conclusion": "success", "check_suite": {"id": 10}, "app": {"slug": "github-actions"}}]}
+        checks = {"total_count": 2, "check_runs": [
+            {"name": "observed-test", "status": "completed", "conclusion": "success", "check_suite": {"id": 10}, "app": {"slug": "github-actions"}},
+            {"name": "release", "status": "completed", "conclusion": "skipped", "check_suite": {"id": 10}, "app": {"slug": "github-actions"}},
+        ]}
         runner = Mock()
         runner.api.side_effect = [{"sha": sha}, {"workflow_runs": [run]}, checks,
-                                  CommandError("gh", 1, 404), {"required_status_checks": {"contexts": ["observed-test"], "strict": True}, "enforce_admins": {"enabled": True}, "required_linear_history": {"enabled": True}, "allow_force_pushes": {"enabled": False}, "allow_deletions": {"enabled": False}, "required_conversation_resolution": {"enabled": True}, "required_pull_request_reviews": {"required_approving_review_count": 0, "require_code_owner_reviews": False, "require_last_push_approval": False}}]
+                                  CommandError("gh", 1, 404), {}, {"required_status_checks": {"contexts": ["observed-test"], "strict": True}, "enforce_admins": {"enabled": True}, "required_linear_history": {"enabled": False}, "allow_force_pushes": {"enabled": False}, "allow_deletions": {"enabled": False}, "required_conversation_resolution": {"enabled": True}, "required_pull_request_reviews": {"required_approving_review_count": 0, "require_code_owner_reviews": False, "require_last_push_approval": False}}]
         receipt = {"steps": []}
         configure_protection(runner, "VillaforTech/eiv", receipt)
-        policy = runner.api.call_args.args[2]
+        policy = next(call.args[2] for call in runner.api.call_args_list if len(call.args) > 1 and call.args[1] == "PUT")
         self.assertEqual(policy["required_status_checks"]["contexts"], ["observed-test"])
+        self.assertNotIn("required_linear_history", policy)
         self.assertEqual(policy["required_pull_request_reviews"]["required_approving_review_count"], 0)
         self.assertFalse(policy["allow_force_pushes"])
         self.assertFalse(policy["allow_deletions"])
         self.assertTrue(policy["required_conversation_resolution"])
         self.assertEqual(receipt["steps"][-1]["status"], "verified")
+
+    def test_metadata_needs_independent_readback_not_only_patch_response(self):
+        runner = Mock()
+        runner.api.side_effect = [dict(PUBLIC, default_branch="master"),
+                                  dict(PUBLIC, **SETTINGS), dict(PUBLIC, description="old description")]
+        with self.assertRaisesRegex(PublishError, "not fully confirmed"):
+            configure(runner, "VillaforTech/eiv", {"steps": []})
+        self.assertEqual(runner.api.call_args.args, ("repos/VillaforTech/eiv",))
 
 
 if __name__ == "__main__":

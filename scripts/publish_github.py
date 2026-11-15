@@ -25,11 +25,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.export_public import inspect_contents, selected_contents
 
-DESCRIPTION = "Verifiable permissions and bounded clarification for AI agents: finite checking, exact planning, reproducible experiments."
-TOPICS = ["ai-safety", "formal-methods", "ai-agents", "authorization", "clarification", "python", "reproducible-research"]
+DESCRIPTION = "Formal models and traceable permission decisions for AI agents: bounded verification, clarification, and reproducible research."
+TOPICS = ["ai-agents", "formal-methods", "ai-safety", "authorization", "explainability", "python", "reproducible-research", "human-in-the-loop"]
 SETTINGS = {"description": DESCRIPTION, "has_issues": True, "has_discussions": True,
-            "has_wiki": False, "has_projects": False, "allow_squash_merge": True,
-            "allow_merge_commit": False, "allow_rebase_merge": False,
+            "allow_squash_merge": True,
             "delete_branch_on_merge": True}
 MATERIALIZED_EVIDENCE_PATHS = frozenset({
     "results/dimensions-v3/raw.jsonl",
@@ -151,7 +150,10 @@ def configure(runner, repository, receipt):
     base = "repos/" + repository
     current = runner.api(base)
     require_public(current, repository)
-    updated = runner.api(base, "PATCH", SETTINGS)
+    # Wiki, Projects and other merge methods may already be in use. Their
+    # removal needs a separate usage review, not a blanket configuration retry.
+    runner.api(base, "PATCH", SETTINGS)
+    updated = runner.api(base)
     if any(updated.get(key) != value for key, value in SETTINGS.items()):
         raise PublishError("repository metadata update was not fully confirmed")
     receipt["steps"].append({"step": "metadata", "status": "verified"})
@@ -159,7 +161,8 @@ def configure(runner, repository, receipt):
     topics = sorted(set(existing) | set(TOPICS))
     if len(topics) > 20:
         raise PublishError("topic union exceeds GitHub limit; existing topics preserved")
-    result = runner.api(base + "/topics", "PUT", {"names": topics})
+    runner.api(base + "/topics", "PUT", {"names": topics})
+    result = runner.api(base + "/topics")
     if set(result.get("names", [])) != set(topics):
         raise PublishError("repository topics update was not confirmed")
     receipt["steps"].append({"step": "topics", "status": "verified"})
@@ -195,7 +198,10 @@ def configure_protection(runner, repository, receipt, branch="main"):
             raise PublishError("too many checks for bounded inspection; protection not changed")
         observed = [check for check in checks.get("check_runs", [])
                     if check.get("check_suite", {}).get("id") == latest.get("check_suite_id")
-                    and check.get("app", {}).get("slug") == "github-actions"]
+                    and check.get("app", {}).get("slug") == "github-actions"
+                    # Release publication is conditional on default-branch
+                    # pushes; it is not a pre-merge validation check.
+                    and check.get("name") != "release"]
         if not observed or any(check.get("status") != "completed" or check.get("conclusion") != "success" for check in observed):
             raise PublishError("successful workflow checks not fully observable; protection not changed")
         contexts = sorted({check["name"] for check in observed})
@@ -215,10 +221,11 @@ def configure_protection(runner, repository, receipt, branch="main"):
                   "enforce_admins": True, "required_pull_request_reviews": {
                       "dismiss_stale_reviews": True, "require_code_owner_reviews": False,
                       "required_approving_review_count": 0, "require_last_push_approval": False},
-                  "restrictions": None, "required_linear_history": True,
+                  "restrictions": None,
                   "allow_force_pushes": False, "allow_deletions": False,
                   "required_conversation_resolution": True}
-        applied = runner.api(base + "/branches/" + branch_path + "/protection", "PUT", policy)
+        runner.api(base + "/branches/" + branch_path + "/protection", "PUT", policy)
+        applied = runner.api(base + "/branches/" + branch_path + "/protection")
         if not protection_matches(applied, contexts):
             raise PublishError("branch protection settings not fully confirmed after update")
         receipt["steps"].append({"step": "branch_protection", "status": "verified", "branch": branch, "required_checks": contexts})
@@ -233,7 +240,7 @@ def protection_matches(policy, contexts):
     checks = policy.get("required_status_checks") or {}
     reviews = policy.get("required_pull_request_reviews") or {}
     return (set(contexts) <= set(checks.get("contexts", [])) and checks.get("strict") is True
-            and enabled("enforce_admins") is True and enabled("required_linear_history") is True
+            and enabled("enforce_admins") is True
             and enabled("allow_force_pushes") is False and enabled("allow_deletions") is False
             and enabled("required_conversation_resolution") is True
             and reviews.get("required_approving_review_count") == 0
@@ -248,7 +255,9 @@ def execute(repository, source, *, apply=False, configure_only=False, runner=Non
     if not apply:
         receipt.update({"network_calls": 0, "files_written": 0, "configure_only": configure_only,
                         "planned_settings": SETTINGS, "topics": TOPICS,
-                        "publication": "Fresh history from verified public export; new or empty public repository only",
+                        "preserved_settings": "Wiki, Projects and other merge methods; review their usage separately before disabling",
+                        "publication": ("No source, tag or release changes; configure an existing public repository only" if configure_only
+                                        else "Fresh history from verified public export; new or empty public repository only"),
                         "protection": "After successful CI: observed check names, resolved conversations, no force pushes/deletions, zero reviewer approvals"})
         return receipt
     runner = runner or Runner()

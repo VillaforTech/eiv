@@ -11,7 +11,7 @@ It makes a difficult boundary executable: **a correct verifier can still approve
 the wrong action when the intended interpretation is missing.**
 
 [Download v0.4.0](https://github.com/VillaforTech/eiv/releases/tag/v0.4.0) · [Research report](docs/research-report.md) · [Project page draft](portfolio/index.html) ·
-[Personal website preview](portfolio/villafortech-preview.html) ·
+[Website preview source](portfolio/villafortech-preview.html) ·
 [Formal action model](docs/formal-action-model.md) · [Architecture](docs/architecture.md) · [Usage and API](docs/usage.md) ·
 [Historical evidence](results/dimensions-v3/analysis.md) · [Planner comparison](results/planner-v4/analysis.md) · [Academic references](research/references.bib)
 
@@ -99,6 +99,21 @@ python3 -m venv .venv
 The installed package includes workbench assets and examples. Full experiments
 require the source checkout and its frozen data. No model download, inference,
 API key, cloud account or paid service is required.
+
+To review the website draft over HTTP, run this separate static server from the
+repository root:
+
+```sh
+python3 -m http.server 4173 --bind 127.0.0.1
+```
+
+Open **http://127.0.0.1:4173/portfolio/villafortech-preview.html** for the proposed
+villafortech.com case study, or **http://127.0.0.1:4173/portfolio/** for the
+standalone project illustration. These are local presentation drafts. The live
+Python workbench runs separately at port 8765. See the
+[portfolio guide](portfolio/README.md) for integration details and the
+[repository configuration record](docs/open-source.md) for verified GitHub
+settings and remaining limitations.
 
 ## Evidence, including the failures
 

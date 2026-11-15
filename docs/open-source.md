@@ -20,9 +20,10 @@ The release request file was removed after publication.
 
 Repository files configure CI, contribution/security policies, Dependabot,
 ownership, citation metadata and the issue/PR templates. Issues are enabled.
-The About description/topics, branch protection and security settings still
-require administrative configuration and readback; their desired values below
-are not claims that those controls are already active. The website remains a draft.
+Administrative settings were applied with the maintainer's GitHub CLI login and
+independently read back on 2026-11-15. The [configuration receipt](../evidence/github-configuration-20261115.json)
+records the observed controls and limitations. The personal website integration
+remains a draft; no production page at `/es/projects/eiv/` has been published.
 
 ## Distribution contract
 
@@ -38,22 +39,36 @@ a repository publicly accessible.
 |---|---|---|
 | Name | `eiv` under the maintainer's account | Verified: `https://github.com/VillaforTech/eiv` |
 | Visibility | Public | Verified public on 2026-11-15 |
-| Description | Formal models and traceable permission decisions for AI agents: bounded verification, clarification, and reproducible research. | Publication configuration |
+| Description | Formal models and traceable permission decisions for AI agents: bounded verification, clarification, and reproducible research. | Applied and independently verified |
 | License | MIT | `LICENSE` |
 | Citation | Software version and academic bibliography | `CITATION.cff`, `research/references.bib` |
 | Documentation | README, architecture, action model, API, research and reproducibility | Included |
 | Community | Contribution guide, conduct, governance, ownership, issue/PR templates | Included |
 | CI | Python 3.10–3.14, full replay, package installation, portfolio checks | Versioned workflow; verify each release's run |
 | Dependencies | Monthly review of GitHub Actions and build dependencies | Dependabot configuration included |
-| Discussions and issues | Enabled | Publication configuration; not assumed from source files |
-| Wiki and project boards | Disabled initially | Keep documentation and a small issue roadmap in one place |
-| Merging | Squash available, delete merged topic branches | Publication configuration |
-| Default branch | No forced updates or deletion; resolved discussions; observed CI required | Apply after the initial CI has run |
-| Security reports | Private reporting and dependency alerts when available | Verify API results; do not infer activation from `SECURITY.md` |
-| Website | Draft under `/projects/eiv` | No production website deployment is implied |
+| Discussions and issues | Enabled | Both independently verified enabled |
+| Wiki and project boards | Disabled | Wiki showed “Create the first page”; Projects showed zero open/closed projects before disabling. Readback confirms both disabled |
+| Merging | Squash available, delete merged topic branches | Both independently verified enabled; existing merge/rebase methods preserved |
+| Default branch | `master`: no force pushes or deletion; resolved conversations; strict required CI; administrators included | Seven existing checks required; PR required with **zero** approving reviews and no code-owner/last-push approval |
+| Security reports | Private reporting, dependency alerts and automated security fixes | Independently verified enabled; use [private reporting](https://github.com/VillaforTech/eiv/security/advisories/new) |
+| Secret protection | Secret scanning and push protection | Both independently verified enabled; optional non-provider patterns remained disabled after request |
+| Code scanning | CodeQL default setup, free for the public repository | See the receipt for the setup run and final observed analysis state |
+| Website / About URL | `https://www.villafortech.com/` | Verified HTTP 200 after canonical redirect. The EIV case study remains a draft, outside the production content collection |
 
 Suggested topics: `ai-agents`, `formal-methods`, `ai-safety`, `authorization`,
 `explainability`, `python`, `reproducible-research`, `human-in-the-loop`.
+
+The required contexts are `test (3.10)`, `test (3.11)`, `test (3.12)`,
+`test (3.13)`, `test (3.14)`, `replay` and `portfolio`, bound to the observed
+GitHub Actions app. `release` publishes only on default-branch pushes and is not
+a required PR validation check. This policy permits one maintainer to submit and
+merge a passing PR without another reviewer. It does not bypass checks for admins.
+
+The existing Dependabot PRs are preserved. The source publication helper now
+preserves Wiki, Projects and other merge methods when retrying configuration;
+disabling an unused feature requires a separate occupancy check. It also reads
+settings back separately after writes. These administrative changes do not alter
+the v0.4.0 tag, release or source asset.
 
 ## Publishing
 
@@ -61,19 +76,16 @@ After a Git clone, first run `python3 scripts/restore_evidence.py` before tests,
 scientific replay or source packaging. The public export manifest describes the
 materialized source tree; compressed delivery does not change historical hashes.
 
-The included publication helper defaults to a read-only plan. Its apply mode
-uses an authenticated GitHub CLI, a fresh source export and a new Git history.
+The included publication helper defaults to a read-only plan. Initial-publication
+apply mode uses an authenticated GitHub CLI, a fresh source export and a new Git history.
+**EIV is already published: use only `--configure-only` for configuration retries.**
 It must refuse an existing private repository or a populated destination for
 initial publication. Configuration retries are a separate operation from pushing
 source. Read the helper's `--help` output before applying it.
 
 ```sh
-python3 scripts/publish_github.py --repository VillaforTech/eiv --plan
-
-# Create a fresh source export, then publish it with your GitHub CLI login.
-python3 scripts/restore_evidence.py
-python3 scripts/export_public.py --output build/public-eiv-final
-python3 scripts/publish_github.py --repository VillaforTech/eiv --apply --source build/public-eiv-final
+python3 scripts/publish_github.py --help
+python3 scripts/publish_github.py --repository VillaforTech/eiv --plan --configure-only
 
 # After CI on the default branch succeeds, finish protection without pushing again.
 python3 scripts/publish_github.py --repository VillaforTech/eiv --apply --configure-only

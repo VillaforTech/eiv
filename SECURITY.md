@@ -18,8 +18,9 @@ independently of the workbench.
 
 Use a minimal synthetic reproduction when reporting a vulnerability. Never
 include real credentials, private instructions or personal data. Contact the
-maintainer through [their profile](https://github.com/VillaforTech) for a private
-disclosure route before posting sensitive details publicly.
+maintainer through [GitHub private vulnerability reporting](https://github.com/VillaforTech/eiv/security/advisories/new).
+Private reporting was enabled and independently read back on 2026-11-15; do not
+post sensitive details in public issues.
 
 Version 0.4 is the maintained research line. Archived experiment sources are
 retained only for isolated reproduction and do not inherit current hardening.

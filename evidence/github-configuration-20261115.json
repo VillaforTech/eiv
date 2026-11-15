@@ -1,0 +1,167 @@
+{
+  "schema": "eiv-github-configuration-1",
+  "observed_at_utc": "2026-11-15T19:19:52.376912+00:00",
+  "repository": "https://github.com/VillaforTech/eiv",
+  "default_branch": "master",
+  "authenticated_account": "VillaforTech",
+  "repository_admin_permission_verified": true,
+  "readback": "Independent GET after each applied setting; vulnerability-alerts success is HTTP 204",
+  "settings": {
+    "description": "Formal models and traceable permission decisions for AI agents: bounded verification, clarification, and reproducible research.",
+    "homepage": "https://www.villafortech.com/",
+    "topics": [
+      "ai-agents",
+      "ai-safety",
+      "authorization",
+      "explainability",
+      "formal-methods",
+      "human-in-the-loop",
+      "python",
+      "reproducible-research"
+    ],
+    "has_issues": true,
+    "has_discussions": true,
+    "has_wiki": false,
+    "has_projects": false,
+    "allow_squash_merge": true,
+    "allow_merge_commit": true,
+    "allow_rebase_merge": true,
+    "delete_branch_on_merge": true
+  },
+  "empty_feature_preconditions": {
+    "wiki": "Browser showed Create the first page before disabling",
+    "projects": "Browser showed no linked projects, open 0 and closed 0 before disabling; CLI GraphQL read:project unavailable but browser was authenticated"
+  },
+  "protection": {
+    "required_status_checks": {
+      "url": "https://api.github.com/repos/VillaforTech/eiv/branches/master/protection/required_status_checks",
+      "strict": true,
+      "contexts": [
+        "test (3.10)",
+        "test (3.11)",
+        "test (3.12)",
+        "test (3.13)",
+        "test (3.14)",
+        "replay",
+        "portfolio"
+      ],
+      "contexts_url": "https://api.github.com/repos/VillaforTech/eiv/branches/master/protection/required_status_checks/contexts",
+      "checks": [
+        {
+          "context": "test (3.10)",
+          "app_id": 15368
+        },
+        {
+          "context": "test (3.11)",
+          "app_id": 15368
+        },
+        {
+          "context": "test (3.12)",
+          "app_id": 15368
+        },
+        {
+          "context": "test (3.13)",
+          "app_id": 15368
+        },
+        {
+          "context": "test (3.14)",
+          "app_id": 15368
+        },
+        {
+          "context": "replay",
+          "app_id": 15368
+        },
+        {
+          "context": "portfolio",
+          "app_id": 15368
+        }
+      ]
+    },
+    "required_pull_request_reviews": {
+      "url": "https://api.github.com/repos/VillaforTech/eiv/branches/master/protection/required_pull_request_reviews",
+      "dismiss_stale_reviews": true,
+      "require_code_owner_reviews": false,
+      "require_last_push_approval": false,
+      "required_approving_review_count": 0
+    },
+    "enforce_admins": {
+      "url": "https://api.github.com/repos/VillaforTech/eiv/branches/master/protection/enforce_admins",
+      "enabled": true
+    },
+    "required_conversation_resolution": {
+      "enabled": true
+    },
+    "allow_force_pushes": {
+      "enabled": false
+    },
+    "allow_deletions": {
+      "enabled": false
+    }
+  },
+  "security": {
+    "vulnerability_alerts": {
+      "enabled": true,
+      "http_status": 204
+    },
+    "private_vulnerability_reporting": {
+      "enabled": true
+    },
+    "automated_security_fixes": {
+      "enabled": true,
+      "paused": false
+    },
+    "security_and_analysis": {
+      "secret_scanning": {
+        "status": "enabled"
+      },
+      "secret_scanning_push_protection": {
+        "status": "enabled"
+      },
+      "dependabot_security_updates": {
+        "status": "enabled"
+      },
+      "secret_scanning_non_provider_patterns": {
+        "status": "disabled"
+      },
+      "secret_scanning_validity_checks": {
+        "status": "disabled"
+      }
+    },
+    "code_scanning": {
+      "state": "configured",
+      "languages": [
+        "actions",
+        "javascript",
+        "javascript-typescript",
+        "python",
+        "typescript"
+      ],
+      "query_suite": "default",
+      "threat_model": "remote_and_local",
+      "updated_at": "2026-11-15T19:16:27Z",
+      "schedule": "weekly",
+      "runner_type": "standard",
+      "runner_label": ""
+    },
+    "setup_run_url": "https://github.com/VillaforTech/eiv/actions/runs/43751384263",
+    "setup_conclusion": "success",
+    "codeql_open_alerts_at_initial_scan": 123,
+    "codeql_contextual_review": "evidence/codeql-triage-20261115.md",
+    "paid_services_enabled": false
+  },
+  "limitations": [
+    "Generic/non-provider secret patterns remained disabled after request; documented eligibility requires qualifying organization repository, whereas EIV is user-owned.",
+    "Secret validity checks remain disabled; no paid service was enabled.",
+    "CodeQL setup succeeded with 123 open high-severity path-injection findings, reviewed as CLI-origin flows; they were not dismissed."
+  ],
+  "website": {
+    "about_url": "https://www.villafortech.com/",
+    "http_status": 200,
+    "integration": "Draft only; no production deployment"
+  },
+  "release_preserved": {
+    "tag": "v0.4.0",
+    "commit": "3b805d9caa157f11e668381c9cfaea2e595f88f5",
+    "assets_untouched": true
+  }
+}
